@@ -2,55 +2,49 @@
     <h1 align=center>CAPÍTULO 1</h1>
 </div>
 
->**Capítulo 1 - Bora para o segundo ano dessa fantástica graduação**
+>**Capítulo 4 - Introdução à redes de comunicação**
 
 ---
 
 <details>
     <summary><span>📌 Índice</span></summary>
 
-- [SÓCIOS DA EMPRESA DA FÁBRICA DE SOFTWARE VOLTZ](#socios-da-empresa-da-fabrica-de-software-voltz)
-  - [Integrantes da Empresa](#integrantes-da-empresa)
-- [CONTEÚDOS A SEREM DESENVOLVIDOS](#conteudos-a-serem-desenvolvidos)
-- [CONTEÚDOS DOS CAPÍTULOS DA FASE 1](#conteudos-dos-capitulos-da-fase-1)
+- [INTRODUÇÃO](#introdução) 
+- [A ORIGEM DAS REDES DE COMUNICAÇÃO](#a-origem-das-redes-de-comunicação)
+- [ARPANET: O EMBRIÃO DA INTERNET](#arpanet-o-embrião-da-internet)
+- [DAS REDES DE COMPUTADORES À INTERNET DAS COISAS (IOT)](#das-redes-de-computadores-à-internet-das-coisas-iot)
+- [A NECESSIDADE DE PROTOCOLOS E ORIGEM DA ARQUITETURA TCP/IP](#a-necessidade-de-protocolos-e-origem-da-arquitetura-tcpip)
+- [CLASSIFICAÇÂO DAS REDES DE COMUNICAÇÃO](#classificação-das-redes-de-comunicação)
+- [CONSIDERAÇÕES FINAIS](#considerações-finais)
 
 </details>
 
 ---
 
-# SÓCIOS DA EMPRESA DA FÁBRICA DE SOFTWARE VOLTZ
-
-## Integrantes da Empresa
-
-| Integrante | Responsabilidade        |
-|:-----------|:------------------------|
-| Débora     | Gestão de Projetos      |
-| Bruno      | Desenvolvimento         |
-| Ana        | Modelagem e Animação 3D |
-| Karina     | Banco de Dados          |
-| Eduardo    | Redes                   |
-
+# INTRODUÇÃO
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-# CONTEÚDOS A SEREM DESENVOLVIDOS
-
-- Agile methodology with squad framework
-- Dynamic Programming
-- AR/VR Modelling and simulation
-- Data Science & Statical computing
-- Database Design
-- Domain Driven Design - Java
-- Network Architect Solutions
+# A ORIGEM DAS REDES DE COMUNICAÇÃO
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-# CONTEÚDOS DOS CAPÍTULOS DA FASE 1
+# ARPANET: O EMBRIÃO DA INTERNET
 
-- Network Architect Solutions
-- AR/VR Modelling and Simulation
-- Domain Driven Design - Java
-- Dynamic Programming
-- Database Design
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+# DAS REDES DE COMPUTADORES À INTERNET DAS COISAS (IOT)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+# A NECESSIDADE DE PROTOCOLOS E ORIGEM DA ARQUITETURA TCP/IP
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+# CLASSIFICAÇÂO DAS REDES DE COMUNICAÇÃO
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+# CONSIDERAÇÕES FINAIS
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
