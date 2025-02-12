@@ -43,3 +43,13 @@
 - Network Architect Solutions
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+# CONTEÚDOS DOS CAPÍTULOS DA FASE 1
+
+- Network Architect Solutions
+- AR/VR Modelling and Simulation
+- Domain Driven Design - Java
+- Dynamic Programming
+- Database Design
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
