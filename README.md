@@ -12,6 +12,7 @@
 - [SÓCIOS DA EMPRESA DA FÁBRICA DE SOFTWARE VOLTZ](#socios-da-empresa-da-fabrica-de-software-voltz)
   - [Integrantes da Empresa](#integrantes-da-empresa)
 - [CONTEÚDOS A SEREM DESENVOLVIDOS](#conteudos-a-serem-desenvolvidos)
+- [CONTEÚDOS DOS CAPÍTULOS DA FASE 1](#conteudos-dos-capitulos-da-fase-1)
 
 </details>
 
