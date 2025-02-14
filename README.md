@@ -16,6 +16,7 @@
 - [A NECESSIDADE DE PROTOCOLOS E ORIGEM DA ARQUITETURA TCP/IP](#a-necessidade-de-protocolos-e-origem-da-arquitetura-tcpip)
 - [CLASSIFICAÇÂO DAS REDES DE COMUNICAÇÃO](#classificação-das-redes-de-comunicação)
 - [CONSIDERAÇÕES FINAIS](#considerações-finais)
+- [GLOSSÁRIO](#glossário)
 
 </details>
 
