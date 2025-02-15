@@ -15,6 +15,13 @@
 - [DAS REDES DE COMPUTADORES À INTERNET DAS COISAS (IOT)](#das-redes-de-computadores-à-internet-das-coisas-iot)
 - [A NECESSIDADE DE PROTOCOLOS E ORIGEM DA ARQUITETURA TCP/IP](#a-necessidade-de-protocolos-e-origem-da-arquitetura-tcpip)
 - [CLASSIFICAÇÂO DAS REDES DE COMUNICAÇÃO](#classificação-das-redes-de-comunicação)
+  - [LAN (Local Area Network)](#lan-local-area-network)
+  - [WAN (Wide Area Network)](#wan-wide-area-network)
+  - [MAN (Metropolitan Area Network)](#man-metropolitan-area-network)
+  - [WMAN (Wireless Metropolitan Area Network)](#wman-wireless-metropolitan-area-network)
+  - [WLAN (Wireless Local Area Network)](#wlan-wireless-local-area-network)
+  - [PAN (Personal Area Network)](#pan-personal-area-network)
+  - [SAN (Storage Area Network)](#san-storage-area-network)
 - [CONSIDERAÇÕES FINAIS](#considerações-finais)
 - [GLOSSÁRIO](#glossário)
 
@@ -127,23 +134,107 @@ Aos dispositivos com essas qualidades é dado o nome de **objetos inteligentes (
 
 # A NECESSIDADE DE PROTOCOLOS E ORIGEM DA ARQUITETURA TCP/IP
 
-| | |
+Um protocolo pode ser definido como uma conveção, um padrão ou uma regra que controla e possibilita uma conexão, 
+comunicação e a transferência de dados entre dispositivos computacionais. Os protocolos podem ser implementados nos
+dispositivos pelo hardware, software ou por uma combinação dos dois em um processo de comunicação.
+
+> Como se chegou a um protocolo aceito por todo o mundo e que permitisse a troca de informações entre os mais diversos
+> dispositivos localizados nos pontos mais distantes do globo terrestre?
+
+A ARPANET foi estruturada como uma rede de comutação de pacote de dados e a primeira rede a implementar um conjunto de 
+protocolos conhecidos como **TCP/IP** (Transmission Control Protocol/Internet Protocol). O conceito de pacotes,
+comutação de pacotes e os protocolos descritos no conjunto TCP/IP se tornaram a base técnica da Internet.
+
+Em 1993 foram criados os protocolos **HTTP** (Hypertext Transfer Protocol) e **browser** (navegador) Mosaic, dando 
+início à World Wide Web (WWW), que passaram a integrar a arquitetura TCP/IP
+
+No Brasil, o acesso à Internet foi iniciado em 1989 com a conexão de instituições acadêmicas como a FAPESP, USP, Unicamp
+e outras. Foram dois *backbones* (estrutura de ligação entre redes) regionais, a RedeRio e a ANSP (Academic Network at
+São Paulo) interligando as principais instituições desses estados. Posteriormente, foi criado a RNP (Rede Nacional de
+Pesquisa), com o objetivo de formar um *backbone* nacional de acesso à Internet e de estimular a formação de redes 
+regionais, como a Rede Minas, Rede Tchâ e outras.
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 # CLASSIFICAÇÂO DAS REDES DE COMUNICAÇÃO
+
+As classificações das redes mais comuns estão baseadas em sua abrangência geográfica (alcance) da rede.
+
+Principais definições geográficas:
+
+## LAN (Local Area Network)
+
+Rede de comunicação local. Termo local é utilizado para delimitar uma pequena área geográfica, como uma casa, 
+escritório, andar de um prédio, departamento de uma empresa ou a rede de uma empresa.
+
+>Quando termina uma LAN?
+
+Uma rede termina em um dispositivo que interliga a rede local a uma rede maior ou outra rede local. Esse dispositivo é 
+nomeado de **roteador**, que fornecerá o ***gateway*** (ponto de entrada e saída para rede local).
+
+## WAN (Wide Area Network)
+
+Rede de longa distância. Trata-se de uma infraestrutura de rede que permite a conexão de equipamentos (ou redes menores) 
+em uma grande área geográfica. A WAN serve de infraestrutura para conexão entre redes locais localizadas em pontos 
+distantes.
+
+>Um exemplo de WAN é a própria Internet
+
+## MAN (Metropolitan Area Network)
+
+Termo era muito utilizado quando se desejava interligar equipamentos (ou redes locais LAN) espalhados em uma área 
+geográfica delimitada por uma cidade (ou cidades vizinhas). Assim, contratava-se uma infraestrutura de comunicação de 
+uma operadora de telecomunicações para interligar os locais (como dois prédios de uma empresa em locais distintos da
+cidade).
+
+Essa nomenclatura também foi bastante utilizada no início das redes para TV a cabo, em que uma empresa utilizava uma
+infraestrutura de comunicação própria ou contratada especificamente para inteligar um ou mais pontos da empresa até as 
+residências de seus clientes.
+
+Apesar de ainda existir muitas redes do tipo MAN nas grandes cidades, é uma nomenclatura que poderá cair em desuso à 
+medida que as empresas e as residências optam por interligar suas redes por meio do uso de infraestrutura provida pela
+Internet.
+
+## WMAN (Wireless Metropolitan Area Network)
+
+Trata-se de uma rede MAN conectada por recursos sem fio (antenas, satélites). Apesar de pouco referenciada, trata-se da 
+conexão de dispositivos ou redes locais distribuídas em pontos distantes em uma área metropolitana.
+
+## WLAN (Wireless Local Area Network)
+
+Trata-se de uma espicificidade de uma rede local LAN, na qual se utilizam recursos sem fio (wireless, geralmente do tipo
+Wi-Fi) como meio de comunicação entre os dispositivos. Exemplo mais comuns são as redes sem fio em residências e 
+pequenas organizações.
+
+## PAN (Personal Area Network)
+
+Rede de comunicação entre dispositivos próximos e que utilizam recursos via Bluetooth (tecnologia de comunicação sem fio 
+ponto a ponto). Um exempli é a conexão entre um celular e uma caixa de som. O termo também está evoluindo para 
+referenciar também a conexão entre os "dispositivos vestíveis" e dispositivos que funcionam como sensores em ambientes.
+
+## SAN (Storage Area Network)
+
+Infraestrutura de comunicação destinada a interligar dispositivos para armazenamento de dados, ou seja, utilizada na
+interligação de *storages*, servidores e dispositivos que permitem a interligação desses equipamentos. Esse tipo de rede 
+geralmente é encontrado em data centers para permitir uma maior velocidade de conexão entre os dispositivos de 
+armazenamento de dados.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 # CONSIDERAÇÕES FINAIS
 
+Há organizações que foram desenvolvidas com o propósito de ajudar a manter a estrutura e a padronização de protocolos e 
+processos da Internet. Essas organizações incluem: IETF (Internet Engineering Task Force), ICANN (Internet Corporation
+for Assigned Names and Numbers), IAB (Internet Architecture Board) e outras.
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 # GLOSSÁRIO
 
-| Sigla                      | Descrição                                                                                                                                                                                                                                                                    |
-|:---------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| host                       |                                                                                                                                                                                                                                                                              |
-| Internet                   |                                                                                                                                                                                                                                                                              |
-| Internet e Internetworking | internet (com letra minúscula) e internetworking são termos usados para definir uma rede genérica formada pela interligação de redes utilizando o protocolo TCP/IP, por exemplo, três redes isoladas que decidem trocar informações entre si utilizando a arquitetura TCP/IP |
+| Sigla                      | Descrição                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+|:---------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| host                       | Qualquer dispositico (computador, celular, geladeira, relógio e etc.) conectado a uma rede, podendo oferecer informações, recursos, serviços e aplicações aos usuários ou outros equipamentos (hosts) em uma rede de comunicação. Todo host na Internet precisa obrigatoriamente ter configurado a arquitetura TCP/IP e possuir um endereço único e exclusivo (o seu identificador) fornecido por meio dessa arquitetura: **endereço IP**                                                               |
+| Internet                   | Um nome próprio utilizado para denominar uma rede mundial de comunicação que interliga redes de comunicação do mundo inteiro. É formada pela conexão entre centenas de milhares de redes menores. A Internet tem suas políticas controladas pelo IAB (Internet Architecture Board), um fórum patrocinado pela Internet Society, uma comunidade aberta formada por usuários, fabricantes, representantes governamentais e pesquisadores. Assim pode-se dizer que a gestão da Internet é descentralizada. |
+| Internet e Internetworking | internet (com letra minúscula) e internetworking são termos usados para definir uma rede genérica formada pela interligação de redes utilizando o protocolo TCP/IP, por exemplo, três redes isoladas que decidem trocar informações entre si utilizando a arquitetura TCP/IP                                                                                                                                                                                                                            |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
