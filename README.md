@@ -9,7 +9,6 @@
 <details>
     <summary><span>📌 Índice</span></summary>
 
-- [INTRODUÇÃO](#introdução) 
 - [DAS ORIGENS DAS REDES À INDEPENDÊNCIA DOS NÍVEIS DE EVOLUÇÃO](#das-origens-das-redes-à-independência-dos-níveis-de-evolução)
 - [MODELO OSI DA ISO](#modelo-osi-da-iso)
 - [A PILHA DE PROTOCOLOS NA ARQUITETURA TCP/IP](#a-pilha-de-protocolos-na-arquitetura-tcpip)
@@ -27,15 +26,62 @@
 
 ---
 
-# INTRODUÇÃO
+# DAS ORIGENS DAS REDES À INDEPENDÊNCIA DOS NÍVEIS DE EVOLUÇÃO
+
+Durante as décadas de 1960 e 1970 foram ciradas muitas tecnologias de redes, sendo que cada uma apresentava uma 
+estrutura específica de hardware. Essas estruturas eram de arquitetura monolítica, o que significava que os 
+desenvolvedores trabalhavam com todos os elementos (todos os níveis) envolvidos no processo, sem separação. Um mesmo
+desenvolvedor tinha que se procupar com o sistema, o hardware envolvido na comunicação e no meio de transmissão.
+
+Essa forma de desenho era pouoco prática, uma vez que, com esse grande bloco de informações, todos os elementos tinham
+que ser modificados caso ocorrsse uma pequena mudança em alguma parte da estrutura.
+
+Surgiu então a necessidade de definição de uma arquitetura que fosse padrão para as redes, o que permitiria que 
+equipamentos de fabricantes distintos pudessem se interconectar, além de permitir independência entre os níveis. 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-# DAS ORIGENS DAS REDES À INDEPENDÊNCIA DOS NÍVEIS DE EVOLUÇÃO
+# MODELO OSI
+
+O modelo OSI (Open Systems Interconnection) apresenta uma organização em camadas, ou módulos, para as funcionalidades
+envolvidas em uma comincação em redes. Assim não temos mais uma estrutura monolítica, na qual um fabricante terá que 
+cuidar de toda a tecnologia envolvida na comunicação em rede. Um fabricante poderá desenvolver sua tecnologia em uma ou
+mais camadas. Outros fabricantes poderão desenvolver suas tecnologias na mesma ou em outras camadas, também seguindo os
+padrões definidos. Ao final, visto que todos sigam os padrões definidos pelo modelo, a interoperabildade entre os
+diferentes fabricantes se dará naturalmente, uma vez que o padrão definido em cada camada prevê a interface com os
+padrões definidos para as outras camadas.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 # MODELO OSI DA ISO
+
+A **ISO (International Organization for Standardization)** foi uma das primeiras organizações a definir formalmente uma 
+arquitetura-padrão, ou modelo, com o objetivo de facilitar o processo de interconectividade entre máquiinas de 
+diferentes fabricantes. Assim, em 1984, tornou disponível o modelo chamado **OSI (Open Systems Interconnection)**, ou
+**modelo OSI**.
+
+Trata-se de um modelo que estabelece padrões e orientações para que ocorra a interconectividade de dois dispositivos de
+rede, independentemente das empresas envolvidas na fabricação das tecnologias envolvidas.
+
+Esse conceito de modelo baseado em sete camadas foi fornecido por **Charles Bachman**. A evolução do projeto OSI começou 
+a partir da experiência com a ARPANET.
+
+Assim, seguindo a lógica da organização de padrões em camadas, o desenvolvedor de um sistema deverá seguir padrões 
+definidos para a camada respectiva ao seu sistema sem ter que conhecer as tecnologias de outras camadas. 
+
+Isso é muito vantajoso e facilita a evolução tecnológica, já que o desenvolvimento em uma camada não afetará 
+necessariamente todas as demais camadas.
+
+Modelo OSI serve de base para que ocorra a comunicação em qualquer tipo de rede (curta, média ou longa distância), 
+independente dos fabricantes envolvidos. O surgimento do modelo permitiu então a padronização e interoperabilidade 
+(operação entre sistemas de fabricantes distintos).
+
+O modelo OSI organiza suas orientações em pilhas de protocolos, ou **camadas**. Cada camada organiza um conjunto de 
+regras que define como serão realizados a operação e o intercâmbio das informações entre dois sistemas. Todas as funções
+necessárias para que ocorra a interconectivbidade de dispositivos de rede foram organizadas em sete camadas no modelo 
+OSI, numerados de 1 a 7.
+
+![img.png](img.png)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -64,8 +110,6 @@
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 # CONSIDERAÇÕES FINAIS
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
