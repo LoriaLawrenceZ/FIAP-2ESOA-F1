@@ -117,7 +117,67 @@ A arquitetura TCP/IP é composto por quatro camadas (formando a pilha da estrutu
 
 ![img.png](./img/img2.png)
 
+O TCP/IP teve origem em um estudo feito pelos pesquisadores estadunidenses **Vinton Cerf** e **Robert Kahn** (1974), que
+propuseram um grupo de protocolos centrais parar satisfazer as seguintes necessidades na então ARPANET:
+
+- Permitir o roteamento entre redes diferentes (chamadas *subnets* ou sub-redes).
+- Garantir a independência da tecnologia de redes utilizada para poder conectar as sub-redes.
+- Tornar o uso de hardware na rede independente do seu fabricante.
+- Possibilitar a recuperação de falhas ocorridas durante uma transmissão.
+
+Originalmente os protocolos propostos foram chamados de NCP (Network Control Protocol), mas em 1978 passaram a ser
+chamados de **TCP/IP**.
+
+Em 1980, o DARPA começou a implementar o TCP/IP na ARPANET, dando origem à Internet. Em 1983, o DARPA finalizou a 
+conversão de todos os seus computadores e exigiu a implementação do TCP/IP em todos os computadores que desejassem se
+conectar à ARPANET.
+
+A arquitetura TCP/IP (assim como o modelo de referência OSI da ISO) realiza a divisão de funções do sistema de 
+comunicação de redes em uma estrutura de camadas. Na arquitetura TCP/IP as camadas são: aplicação, transporte, rede 
+(também referenciada como Internet) e acesso à rede. Assim como no modelo OSI/ISO, as camadas TCP/IP são representadas
+por uma pilha.
+
+A família de protocolos TCP/IP foi pioneira na utilização do conceito de níveis, formando uma arquitetura estruturada, 
+racional e simples, fácil de modificar. Posteriormente, a ISO adotou esses conceitos para criar o modelo OSI.
+
+Atualmente, o conjunto de protocolos TCP/IP inclui muitos protocolos. Os protocolos individuais são organizados em 
+camadas que usam o modelo de protocolo TCP/IP: aplicação, transporte, rede (ou Internet) e acesso à rede. Os protocolos 
+que compõem o TCP/IP são específicos para as camadas de aplicação, transporte e Internet. Os protocolos de camada de 
+acesso à rede são responsáveis pela entrega do pacote IP pelo meio físico. Esses protocolos da camada inferior foram
+desenvolvidos por várias empresas de padrões.
+
+A arquitetura TCP/IP é implementada como uma pilha de protocolos TCP/IP nos dispositicos de origem e destino envolvidos 
+na comunicação prover entrega fim a fim de aplicações pela rede. Os protocolos Ethernet são usados para transmitir o
+pacote IP pelo meio físico usado pela rede local (LAN)
+
+![img.png](./img/img3.png)
+
 ## Comparação entre o modelo OSI e TCP/IP
+
+Enquanto o modelo OSI organiza seus padrões em sete camadas, a arquitetura TCP/IP é composta por quatro camadas 
+(formando a pilha de protocolos da estrutura TCP/IP) e, na prática, as camadas 5, 6 e 7 do modelo OSI foram mescladas 
+para formar a camada de aplicação do TCP/IP. Já as camadas 3 e 4 do modelo OSI são similares às camadas 2 e 3 do TCP/IP,
+inclusive a camada de transporte do TCP/IP tem o mesmo nome, porém a camada 3 do modelo OSI (rede) no TCP/IP, muitas 
+vezes, é referenciada como camada Internet. Por fim, as camadas 1 e 2 do modelo OSI foram mescladas no TCP/IP para 
+formar a camada de acesso aos meios ou acesso à rede.
+
+![img.png](./img/img4.png)
+
+Na camada de acesso à rede, a pilha de protocolos TCP/IP não especifica que protocolos usar ao transmitir por um meio
+físico, ele descreve somente a transmissãod a camada de Internet aos protocolos da rede física. As camadas 1 e 2 do
+modelo OSI discutem os procedimentos necessários para acessar a mídia e o meio físico para enviar dados por uma rede.
+
+A camada 3 é usada para descrever os protocolos que endereçam e encaminham mensagens em uma rede.
+
+A camada 4 descreve os serviços e as funções gerais que fornecem uma entrega ordenada e confiável de dados entre os 
+*hosts* origem e destino.
+
+A camada de aplicações TCP/IP inclui uma série de protocolos que fornecem uma funcionalidade específica a uma variedade
+de aplicações de usuário final. As camadas 5, 6 e 7 do modelo OSI são usadas como referências para desenvolvedores e 
+fornecedores de software de aplicação para produzir produtos que operem nas redes.
+
+Ambos os modelos TCP/IP e OSI são usados geralmente para referenciar protocolos em várias camadas. Como o modelo OSI
+separa a camada de enlace de dados da camada física, geralmente é usado para referenciar as camadas inferiores.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
