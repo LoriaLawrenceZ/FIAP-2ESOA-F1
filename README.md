@@ -81,11 +81,41 @@ regras que define como serão realizados a operação e o intercâmbio das infor
 necessárias para que ocorra a interconectivbidade de dispositivos de rede foram organizadas em sete camadas no modelo 
 OSI, numerados de 1 a 7.
 
-![img.png](img.png)
+![img.png](./img/img1.png)
+
+O modelo é composto por sete camadas e cada uma delas realiza funções específicas no processo de comunicação em redes.
+As camadas do modelo OSI são:
+
+- **Camada 7 - Aplicação** (application)
+- **Camada 6 - Apresentação** (presentation)
+- **Camada 5 - Sessão** (session)
+- **Camada 4 - Transporte** (transport)
+- **Camada 3 - Rede** (network)
+- **Camada 2 - Enlace** (data link)
+- **Camada 1 - Física** (physical)
+
+Os padrões estão organizados no modelo OSI de forma que entre cada camada exista um padrão para interface. Esse padrão 
+para interface permite que as tecnologias situadas em camadas diferentes troquem informações entre si. O padão também
+define quais primitivas, operações e serviços uma camada inferior oferece à camada imediatamente superior. Cada camada é
+independente e executa somente suas funções, independente das funções de outras camadas.
+
+Apesar da divisão em sete níveis no modelo OSI, pode-se considerar genericamente que as três camadas mais baixas do 
+modelo cuidam dos aspectos relacionados à transmissão propriamente dita, a quarta camada lida com comunicação fim a fim,
+enquanto as três camadas superiores apresentam os aspectos relacionados à aplicação, que fornece a interface com o 
+usuário do sistema.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 # A PILHA DE PROTOCOLOS NA ARQUITETURA TCP/IP
+
+Apesar do modelo OSI ser a referência para o estudo e a nomenclatura dos níveis de atuação das tecnologias envolvidas 
+nas redes de comunicação, a arquitetura TCP/IP surgiu com os priomórdios da Internet e está em uso até os dias de hoje
+tanto nas redes internas (intranets) como na Internet, tornando a arquitetura mais referenciada pela indústria 
+atualmente.
+
+A arquitetura TCP/IP é composto por quatro camadas (formando a pilha da estrutura do protocolo).
+
+![img.png](./img/img2.png)
 
 ## Comparação entre o modelo OSI e TCP/IP
 
