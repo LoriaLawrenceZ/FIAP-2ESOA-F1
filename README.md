@@ -234,6 +234,12 @@ Para compreender como se dá a comunicação em uma rede seguindo um modelo em c
 
 </details>
 
+No cenário apresentado, há duas redes locais (LAN), sendo a LAN 1 representando a rede local de uma pequena empresa e a LAN 2 representando uma rede local em uma residência. As duas redes estão ligadas à Internet que, na figura, está representada pelo desenho de uma nuvem.
+
+Em nosso primeiro exemplo, um usuário do notebook localizado na rele LAN 1 utilizará um navegador web (*web browser*) para requisitar uma página WWW hospedada no servidor que se encontra na mesma rede local, a LAN 1.
+
+Para isso, temos uma aplicação (*software*) instalada no servidor localizado na rede LAN 1 e que funcionará como servidor de páginas WWW. Essa aplicação foi desenvolvida seguindo os padrões definidos pelo protocolo para comunicações WWW, o protocolo **HTTP (*Hypertext Transfer Protocol*)**. DO outro lado, no noteboook também localizado na rede LAN 1, temos outra aplicação (software) que será utilizada como navegador *web* e que também doi desenvolvida seguindo os padrões definidos pelo protocolo **HTTP**.
+
 ## Passo 1: A Camada de Aplicação
 
 ## Passo 2: A Camada de Transporte
