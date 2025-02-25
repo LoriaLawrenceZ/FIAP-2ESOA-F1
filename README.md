@@ -183,9 +183,56 @@ separa a camada de enlace de dados da camada física, geralmente é usado para r
 
 # A COMUNICAÇÃO EM REDES SEGUINDO UMA ARQUITETURA
 
+As camadas são processos, implementados por hardware ou software em um dispositivo, que se comunicam com o processo 
+correspondente em outro dispositivo na rede. Cada camada oferece um conjunto de serviços ao nível (camada) superior,
+usando funções realizadas no próprio nível e serviços disponíveis nos níveis (camadas) inferiores.
+
+Em uma estrutura baseada em camadas, os dados transferidos em uma comunicação de um nível específico em um dispositivo transmissor (por exemplo, o nível da aplicação) não são enviados diretamente ao processo do mesmo nível em outro dispositivo receptor. Os dados são encaminhados primeiramente através de cada camada adjacente no dispositivo transmissor até o nível físico, onde é transmitido, para alcanar o outro dispositivo. Após alcançar o dispositivo receptor, os dados serão encaminhados através de cada nível adjacente nesse dispositivo até a sua camada de aplicação.
+
+![Camadas, interfaces e protocolos](img/img5.png)
+
+<details close>
+    <summary><code>IMAGEM | Camadas, interfaces e protocolos</code></summary>
+
+| Sistema A <br> (Transmissor) | | Sistema B <br> (Receptor) |
+|:---------:|:---:|:---------:|
+| Camada N | Protocolo da camada N | Camada N |
+| Interface entre as camadas N-1 e N <br> &#8595; | | &#8593; |
+| Camada 3 | Protocolo da camada 3 | Camada 3 |
+| Interface entre as camadas 2 e 3 <br> &#8595; | | &#8593; |
+| Camada 2 | Protocolo da camada 2 | Camada 2 |
+| Interface entre as camadas 1 e 2 <br> &#8595; | | &#8593; |
+| Camada 1 | Protocolo da camada 1 | Camada 1 |
+
+</details>
+
+Os protocolos são conjuntos de regras e formatos que permitem a comunicação entre as camadas nos diferentes dispositivos. Em cada camada, podem ser definidos um ou mais protocolos. Já as interfaces representam o limite entre cada nível adjacente em que uma camada compreende as informações vindas de outra camada.
+
+Com exceção da camada mais alta, cada camada é usuária dos serviços prestados pela camada imediatamente inferior (n-1) e presta serviços para a camada imediatamente superior (n+1). Essa troca de informações entre as camadas adjacentes ocorre por meio da troca de primitivas de serviços (funções que um nível oferece ao nível imediatamente superior de forma a prover a comunicação entre eles) nas interfaces entre as camadas.
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 # EXEMPLO DE COMUNICAÇÃO SEGUINDO A ARQUITETURA TCP/IP
+
+Para compreender como se dá a comunicação em uma rede seguindo um modelo em camadas, vamos considerar o cenário a seguir:
+
+![Comunicação entre duas redes locais por meio da Internet](img/img6.png)
+
+<details close>
+    <summary><code>IMAGEM | Camadas, interfaces e protocolos</code></summary>
+
+| LAN 1 <br> (empresa) | | LAN 2 <br> (residência) |
+|:---------:|:---:|:---------:|
+| &#8595; &#8592; | Internet | &#8594; &#8595; |
+| Roteador | | Roteador WiFi doméstico |
+| Switch | | Printer1 |
+| Servidor1 | | Smartphone2 |
+| Printer0 | | Tablet PC0 |
+| Notebook | | Notebook doméstico |
+| Desktop1 | | |
+| Desktop2 | | |
+
+</details>
 
 ## Passo 1: A Camada de Aplicação
 
