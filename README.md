@@ -1,260 +1,294 @@
 <div name="readme-top">
-    <h1 align=center>CAPÍTULO 5</h1>
+    <h1 align=center>CAPÍTULO 6</h1>
 </div>
 
->**Capítulo 5 - Arquiteturas e modelo de referência em redes**
+>**Capítulo 6 - Introdução ao Java**
 
 ---
 
 <details>
     <summary><span>📌 Índice</span></summary>
 
-- [DAS ORIGENS DAS REDES À INDEPENDÊNCIA DOS NÍVEIS DE EVOLUÇÃO](#das-origens-das-redes-à-independência-dos-níveis-de-evolução)
-- [MODELO OSI DA ISO](#modelo-osi-da-iso)
-- [A PILHA DE PROTOCOLOS NA ARQUITETURA TCP/IP](#a-pilha-de-protocolos-na-arquitetura-tcpip)
-    - [Comparação entre o modelo OSI e TCP/IP](#comparação-entre-o-modelo-osi-e-tcpip)
-- [A COMUNICAÇÃO EM REDES SEGUINDO UMA ARQUITETURA](#a-comunicação-em-redes-seguindo-uma-arquitetura)
-- [EXEMPLO DE COMUNICAÇÃO SEGUINDO A ARQUITETURA TCP/IP](#exemplo-de-comunicação-seguindo-a-arquitetura-tcpip)
-    - [Passo 1: A Camada de Aplicação](#passo-1-a-camada-de-aplicação)
-    - [Passo 2: A Camada de Transporte](#passo-2-a-camada-de-transporte)
-    - [Passo 3: A Camada de Rede](#passo-3-a-camada-de-rede)
-    - [PAsso 4: A Camada de Acesso à Rede](#passo-4-a-camada-de-acesso-à-rede)
-    - [Análise Realizada pelos Protocolos no Destino](#análise-realizada-pelos-protocolos-no-destino)
-- [CONSIDERAÇÕES FINAIS](#considerações-finais)
+- [INTRODUÇÃO AO JAVA: IDE\< VARIÁVEIS E HELLO WORLD](#introdução-ao-java-ide-variáveis-e-hello-world)
+- [PLATAFORMA JAVA](#plataforma-java)
+- [EDIÇÕES DO JAVA](#edições-do-java)
+- [JAVA VIRTUAL MACHINE - JVM](#java-virtual-machine---jvm)
+- [CONFIGURANDO O AMBIENTE DE DESENVOLVIMENTO](#configurando-o-ambiente-de-desenvolvimento)
+- [PRIMEIRO PROGRAMA EM JAVA](#primeiro-programa-em-java)
+- [AMBIENTE DE DESENVOLVIMENTO INTEGRADO (IDE)](#ambiente-de-desenvolvimento-integrado-ide)
+- [INTALANDO O INTELLIJ IDEA](#intalando-o-intellij-idea)
+- [VARIÁVEIS E TIPOS PRIMITIVOS NO JAVA](#variáveis-e-tipos-primitivos-no-java)
+- [O QUE SÃO VARIÁVEIS?](#o-que-são-variáveis)
+- [TIPOS PRIMITIVOS EM JAVA](#tipos-primitivos-em-java)
+- [DECLARANDO E INICIALIZANDO VARIÁVEIS](#declarando-e-inicializando-variáveis)
+- [REGRAS PARA NOMENCLATURA DE VARIÁVEIS](#regras-para-nomenclatura-de-variáveis)
+- [EXEMPLO DE USO DE VARIÁVEIS E TIPOS PRIMITIVOS](#exemplo-de-uso-de-variáveis-e-tipos-primitivos)
+- [OPERADORES ARITMÉTICOS E ENTRADA DED ADOS EM JAVA](#operadores-aritméticos-e-entrada-ded-ados-em-java)
 
 </details>
 
 ---
 
-# DAS ORIGENS DAS REDES À INDEPENDÊNCIA DOS NÍVEIS DE EVOLUÇÃO
+# INTRODUÇÃO AO JAVA: IDE< VARIÁVEIS E HELLO WORLD
 
-Durante as décadas de 1960 e 1970 foram ciradas muitas tecnologias de redes, sendo que cada uma apresentava uma 
-estrutura específica de hardware. Essas estruturas eram de arquitetura monolítica, o que significava que os 
-desenvolvedores trabalhavam com todos os elementos (todos os níveis) envolvidos no processo, sem separação. Um mesmo
-desenvolvedor tinha que se procupar com o sistema, o hardware envolvido na comunicação e no meio de transmissão.
+Criado pela ***Sun Microsystems*** (agora parte da Oracle Corportation) na década de 1990.
 
-Essa forma de desenho era pouoco prática, uma vez que, com esse grande bloco de informações, todos os elementos tinham
-que ser modificados caso ocorrsse uma pequena mudança em alguma parte da estrutura.
+Sua capacidade de rodar em diferentes plataformas sem a necessidade de alterações significativas no código fonte 
+tornou-a altamente procurada por desenvolvedores e empresas.
 
-Surgiu então a necessidade de definição de uma arquitetura que fosse padrão para as redes, o que permitiria que 
-equipamentos de fabricantes distintos pudessem se interconectar, além de permitir independência entre os níveis. 
+Outro fator que contribuiu para sua popularidade foi a sua arquitetura orientada a obbjetos, tornando o código mais 
+fácil de manter, modificar e estender, resultando em um código mais limpo, eficiente e de fácil manutenção.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-# MODELO OSI
-
-O modelo OSI (Open Systems Interconnection) apresenta uma organização em camadas, ou módulos, para as funcionalidades
-envolvidas em uma comincação em redes. Assim não temos mais uma estrutura monolítica, na qual um fabricante terá que 
-cuidar de toda a tecnologia envolvida na comunicação em rede. Um fabricante poderá desenvolver sua tecnologia em uma ou
-mais camadas. Outros fabricantes poderão desenvolver suas tecnologias na mesma ou em outras camadas, também seguindo os
-padrões definidos. Ao final, visto que todos sigam os padrões definidos pelo modelo, a interoperabildade entre os
-diferentes fabricantes se dará naturalmente, uma vez que o padrão definido em cada camada prevê a interface com os
-padrões definidos para as outras camadas.
+Além disso, a linguagem Java trouxe o conceito de "Write Once, Run Anywhere", graças à Máquina Virtual Java (***JVM - 
+Java Virtual Machine***). Permitindo que o código pudesse rodar em qualquer dispositivo ou sistema operacional que 
+tivesse a JVM instalada.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-# MODELO OSI DA ISO
+# PLATAFORMA JAVA
 
-A **ISO (International Organization for Standardization)** foi uma das primeiras organizações a definir formalmente uma 
-arquitetura-padrão, ou modelo, com o objetivo de facilitar o processo de interconectividade entre máquiinas de 
-diferentes fabricantes. Assim, em 1984, tornou disponível o modelo chamado **OSI (Open Systems Interconnection)**, ou
-**modelo OSI**.
+A Plataforma Java é um ambiente de software onde os programas escritos na linguagem Java são executados. Essa plataforma
+é composta por dois elementos:
 
-Trata-se de um modelo que estabelece padrões e orientações para que ocorra a interconectividade de dois dispositivos de
-rede, independentemente das empresas envolvidas na fabricação das tecnologias envolvidas.
-
-Esse conceito de modelo baseado em sete camadas foi fornecido por **Charles Bachman**. A evolução do projeto OSI começou 
-a partir da experiência com a ARPANET.
-
-Assim, seguindo a lógica da organização de padrões em camadas, o desenvolvedor de um sistema deverá seguir padrões 
-definidos para a camada respectiva ao seu sistema sem ter que conhecer as tecnologias de outras camadas. 
-
-Isso é muito vantajoso e facilita a evolução tecnológica, já que o desenvolvimento em uma camada não afetará 
-necessariamente todas as demais camadas.
-
-Modelo OSI serve de base para que ocorra a comunicação em qualquer tipo de rede (curta, média ou longa distância), 
-independente dos fabricantes envolvidos. O surgimento do modelo permitiu então a padronização e interoperabilidade 
-(operação entre sistemas de fabricantes distintos).
-
-O modelo OSI organiza suas orientações em pilhas de protocolos, ou **camadas**. Cada camada organiza um conjunto de 
-regras que define como serão realizados a operação e o intercâmbio das informações entre dois sistemas. Todas as funções
-necessárias para que ocorra a interconectivbidade de dispositivos de rede foram organizadas em sete camadas no modelo 
-OSI, numerados de 1 a 7.
-
-![img.png](./img/img1.png)
-
-O modelo é composto por sete camadas e cada uma delas realiza funções específicas no processo de comunicação em redes.
-As camadas do modelo OSI são:
-
-- **Camada 7 - Aplicação** (application)
-- **Camada 6 - Apresentação** (presentation)
-- **Camada 5 - Sessão** (session)
-- **Camada 4 - Transporte** (transport)
-- **Camada 3 - Rede** (network)
-- **Camada 2 - Enlace** (data link)
-- **Camada 1 - Física** (physical)
-
-Os padrões estão organizados no modelo OSI de forma que entre cada camada exista um padrão para interface. Esse padrão 
-para interface permite que as tecnologias situadas em camadas diferentes troquem informações entre si. O padão também
-define quais primitivas, operações e serviços uma camada inferior oferece à camada imediatamente superior. Cada camada é
-independente e executa somente suas funções, independente das funções de outras camadas.
-
-Apesar da divisão em sete níveis no modelo OSI, pode-se considerar genericamente que as três camadas mais baixas do 
-modelo cuidam dos aspectos relacionados à transmissão propriamente dita, a quarta camada lida com comunicação fim a fim,
-enquanto as três camadas superiores apresentam os aspectos relacionados à aplicação, que fornece a interface com o 
-usuário do sistema.
+- Biblioteca de classes para o desenvolvimento de aplicações Java.
+- Java Virtual Machine que é o responsável por "executar" os programas Java.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-# A PILHA DE PROTOCOLOS NA ARQUITETURA TCP/IP
+# EDIÇÕES DO JAVA
 
-Apesar do modelo OSI ser a referência para o estudo e a nomenclatura dos níveis de atuação das tecnologias envolvidas 
-nas redes de comunicação, a arquitetura TCP/IP surgiu com os priomórdios da Internet e está em uso até os dias de hoje
-tanto nas redes internas (intranets) como na Internet, tornando a arquitetura mais referenciada pela indústria 
-atualmente.
+| Edição | Descrição                                                                                                                                                                                                                                                                                                   |
+| :---: |:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ***JSE*** <br> ***Java Standart Edition*** | É a base da plataforma. Possui as principais bibliotecas da linguagem que são utilizadas nas outras edições. Essa edição contempla os tipos de dados e coleções de classes responsáveis por criar aplicações desktop, conectar com banco de dados, trabalhar com segurança e redes, além de manipular XML.  |
+| ***JEE*** <br> ***Java Enterprise Edition*** | É a versão Enterprise da plataforma Java, para desenvolvimento de sistema corporativos, web, escaláveis, distribuídos, que são executados dentro de servidores de aplicações.                                                                                                                               |
+| ***JME*** <br> ***Java Micro Edition*** | É a versão para sistemas embarcados e dispositivos móveis. Uma versão enxuta do Java, para rodar em dispositivos com menos recursos.                                                                                                                                                                        |
 
-A arquitetura TCP/IP é composto por quatro camadas (formando a pilha da estrutura do protocolo).
+Além dessas três edições principaius, o Java possui outras duas edições específicas:
 
-![img.png](./img/img2.png)
-
-O TCP/IP teve origem em um estudo feito pelos pesquisadores estadunidenses **Vinton Cerf** e **Robert Kahn** (1974), que
-propuseram um grupo de protocolos centrais parar satisfazer as seguintes necessidades na então ARPANET:
-
-- Permitir o roteamento entre redes diferentes (chamadas *subnets* ou sub-redes).
-- Garantir a independência da tecnologia de redes utilizada para poder conectar as sub-redes.
-- Tornar o uso de hardware na rede independente do seu fabricante.
-- Possibilitar a recuperação de falhas ocorridas durante uma transmissão.
-
-Originalmente os protocolos propostos foram chamados de NCP (Network Control Protocol), mas em 1978 passaram a ser
-chamados de **TCP/IP**.
-
-Em 1980, o DARPA começou a implementar o TCP/IP na ARPANET, dando origem à Internet. Em 1983, o DARPA finalizou a 
-conversão de todos os seus computadores e exigiu a implementação do TCP/IP em todos os computadores que desejassem se
-conectar à ARPANET.
-
-A arquitetura TCP/IP (assim como o modelo de referência OSI da ISO) realiza a divisão de funções do sistema de 
-comunicação de redes em uma estrutura de camadas. Na arquitetura TCP/IP as camadas são: aplicação, transporte, rede 
-(também referenciada como Internet) e acesso à rede. Assim como no modelo OSI/ISO, as camadas TCP/IP são representadas
-por uma pilha.
-
-A família de protocolos TCP/IP foi pioneira na utilização do conceito de níveis, formando uma arquitetura estruturada, 
-racional e simples, fácil de modificar. Posteriormente, a ISO adotou esses conceitos para criar o modelo OSI.
-
-Atualmente, o conjunto de protocolos TCP/IP inclui muitos protocolos. Os protocolos individuais são organizados em 
-camadas que usam o modelo de protocolo TCP/IP: aplicação, transporte, rede (ou Internet) e acesso à rede. Os protocolos 
-que compõem o TCP/IP são específicos para as camadas de aplicação, transporte e Internet. Os protocolos de camada de 
-acesso à rede são responsáveis pela entrega do pacote IP pelo meio físico. Esses protocolos da camada inferior foram
-desenvolvidos por várias empresas de padrões.
-
-A arquitetura TCP/IP é implementada como uma pilha de protocolos TCP/IP nos dispositicos de origem e destino envolvidos 
-na comunicação prover entrega fim a fim de aplicações pela rede. Os protocolos Ethernet são usados para transmitir o
-pacote IP pelo meio físico usado pela rede local (LAN)
-
-![img.png](./img/img3.png)
-
-## Comparação entre o modelo OSI e TCP/IP
-
-Enquanto o modelo OSI organiza seus padrões em sete camadas, a arquitetura TCP/IP é composta por quatro camadas 
-(formando a pilha de protocolos da estrutura TCP/IP) e, na prática, as camadas 5, 6 e 7 do modelo OSI foram mescladas 
-para formar a camada de aplicação do TCP/IP. Já as camadas 3 e 4 do modelo OSI são similares às camadas 2 e 3 do TCP/IP,
-inclusive a camada de transporte do TCP/IP tem o mesmo nome, porém a camada 3 do modelo OSI (rede) no TCP/IP, muitas 
-vezes, é referenciada como camada Internet. Por fim, as camadas 1 e 2 do modelo OSI foram mescladas no TCP/IP para 
-formar a camada de acesso aos meios ou acesso à rede.
-
-![img.png](./img/img4.png)
-
-Na camada de acesso à rede, a pilha de protocolos TCP/IP não especifica que protocolos usar ao transmitir por um meio
-físico, ele descreve somente a transmissãod a camada de Internet aos protocolos da rede física. As camadas 1 e 2 do
-modelo OSI discutem os procedimentos necessários para acessar a mídia e o meio físico para enviar dados por uma rede.
-
-A camada 3 é usada para descrever os protocolos que endereçam e encaminham mensagens em uma rede.
-
-A camada 4 descreve os serviços e as funções gerais que fornecem uma entrega ordenada e confiável de dados entre os 
-*hosts* origem e destino.
-
-A camada de aplicações TCP/IP inclui uma série de protocolos que fornecem uma funcionalidade específica a uma variedade
-de aplicações de usuário final. As camadas 5, 6 e 7 do modelo OSI são usadas como referências para desenvolvedores e 
-fornecedores de software de aplicação para produzir produtos que operem nas redes.
-
-Ambos os modelos TCP/IP e OSI são usados geralmente para referenciar protocolos em várias camadas. Como o modelo OSI
-separa a camada de enlace de dados da camada física, geralmente é usado para referenciar as camadas inferiores.
+- ***Java Card***: Permite o desenvolvimento de pequenos aplicativos para serem executados em smart cards e dispositivos
+- similares, que possuem limitações de processamento.
+- ***JavaFX***: É utilizada para criar aplicações *Rich Internet Applications (RIA)*. Permite criar interfaces gráficas 
+- de usuário para qualquer plataforma, como desktop, web, mobile etc. 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-# A COMUNICAÇÃO EM REDES SEGUINDO UMA ARQUITETURA
+# JAVA VIRTUAL MACHINE - JVM
 
-As camadas são processos, implementados por hardware ou software em um dispositivo, que se comunicam com o processo 
-correspondente em outro dispositivo na rede. Cada camada oferece um conjunto de serviços ao nível (camada) superior,
-usando funções realizadas no próprio nível e serviços disponíveis nos níveis (camadas) inferiores.
+A JVM é responsável por interpretar (executar) os arquivos Java.
 
-Em uma estrutura baseada em camadas, os dados transferidos em uma comunicação de um nível específico em um dispositivo transmissor (por exemplo, o nível da aplicação) não são enviados diretamente ao processo do mesmo nível em outro dispositivo receptor. Os dados são encaminhados primeiramente através de cada camada adjacente no dispositivo transmissor até o nível físico, onde é transmitido, para alcanar o outro dispositivo. Após alcançar o dispositivo receptor, os dados serão encaminhados através de cada nível adjacente nesse dispositivo até a sua camada de aplicação.
+A linguagem Java é **compilada** e **interpretada**. COmpilcação é o processo de "tradução" do programa escrito em 
+linguagem de programação para a linguagem de máquina, para que as instruções possam ser executadas pelo processador.
 
-![Camadas, interfaces e protocolos](img/img5.png)
+Linguagens como C, C++ e Pascal são compilados para um sistema operacional e arquitetura de hardware específicos, ou 
+seja, depois do programa compilado, o código executável (binário) só funciona para aquele tipo de sistema operacional e 
+arquitetura de hardware.
+
+Os arquivos Java (extensão ***.java***) são compiladospara gerar os *bytecodes* (extensão ***.class***). Esses arquivos
+compilados são interpretados (executados) na JVM. E aqui está o pulo do gato, poiis cada sistema operacional possui uma 
+máquina virtual Java.
+
+![Compilação e Interpretação do código Java](img/img1.png)
 
 <details close>
-    <summary><code>IMAGEM | Camadas, interfaces e protocolos</code></summary>
+    <summary><code>IMAGEM | Compilação e Interpretação do código Java</code></summary>
 
-| Sistema A <br> (Transmissor) | | Sistema B <br> (Receptor) |
-|:---------:|:---:|:---------:|
-| Camada N | Protocolo da camada N | Camada N |
-| Interface entre as camadas N-1 e N <br> &#8595; | | &#8593; |
-| Camada 3 | Protocolo da camada 3 | Camada 3 |
-| Interface entre as camadas 2 e 3 <br> &#8595; | | &#8593; |
-| Camada 2 | Protocolo da camada 2 | Camada 2 |
-| Interface entre as camadas 1 e 2 <br> &#8595; | | &#8593; |
-| Camada 1 | Protocolo da camada 1 | Camada 1 |
+- Código Java (.java) é compilado para Bytecode (.class)
+- Bytecode é executado (interpretado) pela JVM
+- Cada sistema operacional possui uma JVM específica
+  - ***Linux 64-bit*: JVM Linux 64-bit**
+  - ***Linux 32-bit*: JVM Linux 32-bit**
+  - ***Windows 64-bit*: JVM Windows 64-bit**
+  - ***Windows 32-bit*: JVM Windows 32-bit**
+  - ***Mac OS*: JVM Mac OS**
 
 </details>
 
-Os protocolos são conjuntos de regras e formatos que permitem a comunicação entre as camadas nos diferentes dispositivos. Em cada camada, podem ser definidos um ou mais protocolos. Já as interfaces representam o limite entre cada nível adjacente em que uma camada compreende as informações vindas de outra camada.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Com exceção da camada mais alta, cada camada é usuária dos serviços prestados pela camada imediatamente inferior (n-1) e presta serviços para a camada imediatamente superior (n+1). Essa troca de informações entre as camadas adjacentes ocorre por meio da troca de primitivas de serviços (funções que um nível oferece ao nível imediatamente superior de forma a prover a comunicação entre eles) nas interfaces entre as camadas.
+# CONFIGURANDO O AMBIENTE DE DESENVOLVIMENTO
+
+Para executar um programa Java, a ***JRE (Java Runtime Environment)*** é o suficiente, pois ela possui tudo que é 
+necessário: a JVM e as bibliotecas. Porém, para desenvolver programas em Java é preciso da JDK, que é formado pela 
+*JRE* e diversas ferramentas essenciais como o ***javac (compilador)***, ***javadoc (documentação)***, ***jdb (debug)***
+e etc.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-# EXEMPLO DE COMUNICAÇÃO SEGUINDO A ARQUITETURA TCP/IP
+# PRIMEIRO PROGRAMA EM JAVA
 
-Para compreender como se dá a comunicação em uma rede seguindo um modelo em camadas, vamos considerar o cenário a seguir:
+Nesse primeiro momento, é importante compreender o processo: escrever o código Java, compilar com uma ferramenta que
+baixamos junto da JDK e depois interpretar o *bytecode* gerado pela compilação na JVM para executar o programa.
 
-![Comunicação entre duas redes locais por meio da Internet](img/img6.png)
+Primeiramente, escrevemos o código:
+
+```java
+public class Teste {
+    public static void main (String args[]) {
+        System.out.println("Hello World!");
+    }
+}
+```
+
+Agora, salvar o arquivo em ***.java*** e não .txt, já que é um arquivo java.
+
+Depois, no terminal, vamos utilizar a ferramenta ***javac*** seguido do nome e extensão do arquivo que desejamos compilar
+
+```bash
+java Teste.java
+```
+
+O resultado é um arquivo criado com a extensão ***.class***, que é o *bytecode*, o código Java compilado!
+
+Para interpretar o bytecode na JVM, basta utilizar a ferramenta ***java*** seguido do nome do *bytecode*, assim o programa será executado!
+
+```bash
+java Teste
+```
+
+# AMBIENTE DE DESENVOLVIMENTO INTEGRADO (IDE)
+
+Para desenvolver as aplicações existem as ferramentas específicas, chamadas de IDEs (Integrated Development Environment). Essas ferramentas têm o objetivo de aumentar a produtividade e a eficiência do desenvolvedor, combinando diversas funcionalidades em uma única interface.
+
+Existem IDEs para linguagens específicas e outras que suportam uma variedade de linguagens de programação. Todas essas ferramentas possuem funcionalidades similares, como as mais comuns:
+
+- ***Editor*** para escrever o código-fonte na linguagem de programação suportada pela IDE
+- ***Compilador*** para compilar o código-fonte
+- ***Depurador (debugger)*** para executar o programa "passo-a-passo", ou seja, é possível verificar o que está acontecendo em cada instrução do programa, facilitando o entendimento do sistema e no processo de encontrar e corrigir bugs.
+- ***Geração de código*** para gerar código-fonte a partir de *templates* de código comumente utilizados para solucionar problemas rotineiros
+- ***Distribuição (Deploy)*** auta no auxilio do processo de gerar o artquivo final para a instalação do sistema desenvolvido ou até mesmo envia os arquivos para o servidor.
+- ***Git*** integração com o versionador de arquivos mais utilizados pelos desenvolvedores.
+- ***Modelagem*** para criação de modelos declasses, objetos, interfaces, associações e interações de forma visual.
+- ***Teste automatizados*** para realizar testes no programa de forma automatizada, baseados em scripts ou programas de testes previamente especificados, gerando relatórios que auxiliam na análise do impacto das alterações do código-fonte
+- ***Refatoração*** realiza a melhoria constante do código-fonte, pode ser na construção de código mais otimizado, limpo e/ou com melhor entedimento pelos envolvidos no desenvolvimento do sistema.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+# INTALANDO O INTELLIJ IDEA
+
+Vai ao endereço do [IntelliJ IDEIA](https://bit.ly/3U9HWX5) no site da JetBrains e baixe o programa. Após baixado, instale o programa.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+# VARIÁVEIS E TIPOS PRIMITIVOS NO JAVA
 
 <details close>
-    <summary><code>IMAGEM | Camadas, interfaces e protocolos</code></summary>
+    <summary><code>VÍDEO | Java: Variáveis e Tipos</code></summary>
 
-| LAN 1 <br> (empresa) | | LAN 2 <br> (residência) |
-|:---------:|:---:|:---------:|
-| &#8595; &#8592; | Internet | &#8594; &#8595; |
-| Roteador | | Roteador WiFi doméstico |
-| Switch | | Printer1 |
-| Servidor1 | | Smartphone2 |
-| Printer0 | | Tablet PC0 |
-| Notebook | | Notebook doméstico |
-| Desktop1 | | |
-| Desktop2 | | |
+8 tipos primitivos são tipos de dados especiais que armazenam somente valor:
+- byte, short, int, long
+- float, double
+- char
+- boolean
+
+Tipo de Referência é um tipo de dado que referenciamos uma posição de memória onde estará um objeto Java. Exemplo:
+- String
+
+Declaração de variável:
+
+```java
+// Primitivos
+int idade;
+idade = 20;
+
+double altura = 1.80;
+
+char caractere = 'a';
+
+boolean especial = false;
+
+// de referência
+String palavra = "palavra";
+```
 
 </details>
 
-No cenário apresentado, há duas redes locais (LAN), sendo a LAN 1 representando a rede local de uma pequena empresa e a LAN 2 representando uma rede local em uma residência. As duas redes estão ligadas à Internet que, na figura, está representada pelo desenho de uma nuvem.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Em nosso primeiro exemplo, um usuário do notebook localizado na rele LAN 1 utilizará um navegador web (*web browser*) para requisitar uma página WWW hospedada no servidor que se encontra na mesma rede local, a LAN 1.
+# O QUE SÃO VARIÁVEIS?
 
-Para isso, temos uma aplicação (*software*) instalada no servidor localizado na rede LAN 1 e que funcionará como servidor de páginas WWW. Essa aplicação foi desenvolvida seguindo os padrões definidos pelo protocolo para comunicações WWW, o protocolo **HTTP (*Hypertext Transfer Protocol*)**. DO outro lado, no noteboook também localizado na rede LAN 1, temos outra aplicação (software) que será utilizada como navegador *web* e que também doi desenvolvida seguindo os padrões definidos pelo protocolo **HTTP**.
+Variáveis são espaços de memória reservados para armazenas dados durante a execução de um programa.
 
-## Passo 1: A Camada de Aplicação
-
-## Passo 2: A Camada de Transporte
-
-## Passo 3: A Camada de Rede
-
-## PAsso 4: A Camada de Acesso à Rede
-
-## Análise Realizada pelos Protocolos no Destino
+java é uma linguagem fortemente tipada, ou seja, para criar uma variável é preciso especificar o tipo de dado que ela irá armazenar e dar uma nome a ela. O tipo de dado determina o tamanho da variável na memória e os valores que ela pode armazenar.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-# CONSIDERAÇÕES FINAIS
+# TIPOS PRIMITIVOS EM JAVA
+
+Java possui oito tipos primitivos, que são os tipos de dados básicos que não são objetos.
+
+- ***byte***: representa números inteiros de 8 bits. O intervalo vai de -128 a 127.
+- ***short***: representa números inteiros de 16 bits. O intervalo vai de -32.768 a 32.767.
+- ***int***: representa números inteiros de 32 bits. O intervalo vai de -2.147.483.648 a 2.147.483.647.
+- ***long***: representa números inteiros de 64 bits. O intervalo vai de -9.223.372.036.854.775.808 a 9.223.372.036.854.775.807.
+- ***float***: representa números de ponto flutuante de 32 bits. Usado para valores com casas decimais.
+- ***double***: representa números de ponto flutuante de 64 bits. Mais preciso que o tipo float.
+- ***char***: representa um caracteree de 16 bits. Unicode de 16 bits.
+- ***boolean***: representa um valor lógico, podendo ser true ou false.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+# DECLARANDO E INICIALIZANDO VARIÁVEIS
+
+Para declarar uma variável em Java:
+
+```java
+tipo nomeDaVariavel;
+```
+
+Para incializar a variável com valor específico:
+
+```java
+int idade;
+idade = 20;
+//ou
+int idade = 20;
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+# REGRAS PARA NOMENCLATURA DE VARIÁVEIS
+
+- O nome da variável deve começar com uma letra ou underscore ( _ )
+- Não é permitido usar caracteres especiais, exceto o underscore ( _ )
+- O nome da variável não pode ser uma palavra reservada da linguagem Java.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+# EXEMPLO DE USO DE VARIÁVEIS E TIPOS PRIMITIVOS
+
+```java
+public class VariaveisExemplo {
+    public static void main(String[] args) {
+        // Declaração de variáveis
+        int idade = 20;
+        double altura = 1.83;
+        char caractere = 'a';
+        boolean especial = false;
+
+        // Exibindo os valores das variáveis
+        System.out.println("Idade: " + idade); // Idade: 20
+        System.out.println("Altura: " + altura); // Altura: 1.83
+        System.out.println("Caractere: " + caractere); // Caractere: a
+        System.out.println("Especial: " + especial); // Especial: false
+    }
+}
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+# OPERADORES ARITMÉTICOS E ENTRADA DED ADOS EM JAVA
+
+<details close>
+    <summary><code>VÍDEO | Java: A Magia dos Operadores</code></summary>
 
 
+
+</details>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
