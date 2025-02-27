@@ -93,6 +93,8 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+---
+
 <span>
     <h3 align=center>
 
@@ -138,6 +140,8 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+---
+
 <span>
     <h3 align=center>
 
@@ -145,9 +149,6 @@
     </h3>
 </span>
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ---
