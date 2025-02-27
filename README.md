@@ -393,6 +393,6 @@ scanner.close();
 
 # AGORA É SUA VEZ!
 
-[Calcular a média de um aluno](./applications/CalcularMediaAluno.java) (Arquivo java dentro de *applications/*).
+[Calcular a média de um aluno](./applications/CalcularMediaAluno/src/main/java/org/example/Main.java) (Arquivo java dentro de *applications/*).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
