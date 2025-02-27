@@ -282,6 +282,8 @@ A primeiro momento, devemos considerar apenas que essas informações são compl
 
 ## Passo 1: A Camada de Aplicação
 
+A camada de aplicação é a camada que fornce aos programas de rede os padrões para que possam se comunicar por meio de uma rede com outros programas.
+
 ## Passo 2: A Camada de Transporte
 
 ## Passo 3: A Camada de Rede
