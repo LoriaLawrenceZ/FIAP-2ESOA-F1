@@ -246,6 +246,40 @@ Em nosso primeiro exemplo, um usuário do notebook localizado na rele LAN 1 util
 
 Para isso, temos uma aplicação (*software*) instalada no servidor localizado na rede LAN 1 e que funcionará como servidor de páginas WWW. Essa aplicação foi desenvolvida seguindo os padrões definidos pelo protocolo para comunicações WWW, o protocolo **HTTP (*Hypertext Transfer Protocol*)**. DO outro lado, no noteboook também localizado na rede LAN 1, temos outra aplicação (software) que será utilizada como navegador *web* e que também doi desenvolvida seguindo os padrões definidos pelo protocolo **HTTP**.
 
+Assim como acontece em todas as comunicações em redes que seguem a arquitetura TCP/IP, veremos nesse exemplo que cada camada da arquitetura no equipamento cliente (notebook) trocará informações com a respectiva camada no equipamento servicor.
+
+![Troca de Informações entre camadas correspondentes](img/img7.png)
+
+<details close>
+    <summary><code>IMAGEM | Troca de Informações entre camadas correspondentes</code></summary>
+
+| Arquitetura TCP/IP <br> Servidor | | | Arquitetura TCP/IP <br> Notebook |
+|:---------:|:---:|:---:|:---------:|
+| Aplicação | Protocolo http <br> &#8594; | Protocolo http <br> &#8592; | Aplicação |
+| Transporte | Protocolo TCP <br> &#8594; | Protocolo TCP <br> &#8592; | Transporte |
+| Rede | Protocolo IP <br> &#8594; | Protocolo IP <br> &#8592; | Rede |
+| Acesso à Rede | Protocolo Ethernet <br> &#8594; | Protocolo Ethernet <br> &#8592; | Acesso |
+
+</details>
+
+As informações que serão trocadas entre as camadas estão destacadas em:
+
+![Informações trocadas entre as camadas da arquitetura TCP/IP](img/img8.png)
+
+<details close>
+    <summary><code>IMAGEM | Informações trocadas entre as camadas da arquitetura TCP/IP</code></summary>
+
+| Arquitetura TCP/IP <br> Servidor | | | Arquitetura TCP/IP <br> Notebook |
+|:---------:|:---:|:---:|:---------:|
+| Aplicação | Protocolo http <br> &#8594; | Protocolo http <br> &#8592; | Aplicação |
+| Transporte | Protocolo TCP <br> &#8594; <br> 80 | Protocolo TCP <br> &#8592; <br> 49380 | Transporte |
+| Rede | Protocolo IP <br> &#8594; <br> 192.168.1.2 | Protocolo IP <br> &#8592; <br> 192.168.1.1 | Rede |
+| Acesso à Rede | Protocolo Ethernet <br> &#8594; <br> 0090.2B52.1918 | Protocolo Ethernet <br> &#8592; <br> 000A.4124.9C05 | Acesso |
+
+</details>
+
+A primeiro momento, devemos considerar apenas que essas informações são complementares e fornecem um esquema de endereçamento para identificar a origem e destino no processo de comunicação entre dois equipamentos.
+
 ## Passo 1: A Camada de Aplicação
 
 ## Passo 2: A Camada de Transporte
