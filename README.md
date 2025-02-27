@@ -126,9 +126,3 @@ Uma classe é como um plano detalhado para criar objetos em seu programa. Ela de
 Imaginando múltiplos cenários de aplicações, é possível perceber que cada um deles pode ser mais bem resolvido com um paradigma específico, seja ele com programação estruturada ou programação orientada a objetos. Por isso, é importante que o desenvolvedor conheça os paradigmas existentes e saiba quando e como aplicá-los.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
