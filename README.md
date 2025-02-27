@@ -5,394 +5,130 @@
 </span>
 
 <div name="readme-top">
-    <h1 align=center>CAPÍTULO 6</h1>
+    <h1 align=center>CAPÍTULO 7</h1>
 </div>
 
->**Capítulo 6 - Introdução ao Java**
+>**Capítulo 7 - Conceitos e Paradigmas de POO**
 
 ---
 
 <details>
     <summary><span>📌 Índice</span></summary>
 
-- [INTRODUÇÃO AO JAVA: IDE, VARIÁVEIS E HELLO WORLD](#introdução-ao-java-ide-variáveis-e-hello-world)
-- [PLATAFORMA JAVA](#plataforma-java)
-- [EDIÇÕES DO JAVA](#edições-do-java)
-- [JAVA VIRTUAL MACHINE - JVM](#java-virtual-machine---jvm)
-- [CONFIGURANDO O AMBIENTE DE DESENVOLVIMENTO](#configurando-o-ambiente-de-desenvolvimento)
-- [PRIMEIRO PROGRAMA EM JAVA](#primeiro-programa-em-java)
-- [AMBIENTE DE DESENVOLVIMENTO INTEGRADO (IDE)](#ambiente-de-desenvolvimento-integrado-ide)
-- [INSTALANDO O INTELLIJ IDEA](#instalando-o-intellij-idea)
-- [VARIÁVEIS E TIPOS PRIMITIVOS NO JAVA](#variáveis-e-tipos-primitivos-no-java)
-- [O QUE SÃO VARIÁVEIS?](#o-que-são-variáveis)
-- [TIPOS PRIMITIVOS EM JAVA](#tipos-primitivos-em-java)
-- [DECLARANDO E INICIALIZANDO VARIÁVEIS](#declarando-e-inicializando-variáveis)
-- [REGRAS PARA NOMENCLATURA DE VARIÁVEIS](#regras-para-nomenclatura-de-variáveis)
-- [EXEMPLO DE USO DE VARIÁVEIS E TIPOS PRIMITIVOS](#exemplo-de-uso-de-variáveis-e-tipos-primitivos)
-- [OPERADORES ARITMÉTICOS E ENTRADA DE DADOS EM JAVA](#operadores-aritméticos-e-entrada-de-dados-em-java)
-- [OPERADORES ARITMÉTICOS](#operadores-aritméticos)
-- [ENTRADA DE DADOS EM JAVA](#entrada-de-dados-em-java)
-- [AGORA É SUA VEZ!](#agora-é-sua-vez)
+- [AFINAL, O QUE É UM PARADIGMA EM LINGUAGEM DE PROGRAMAÇÃO?](#afinal-o-que-é-um-paradigma-em-linguagem-de-programação)
+  - [Então existem diferentes formas de programar!](#então-existem-diferentes-formas-de-programar)
+  - [Os conceitos básicos da Orientação a Objetos](#os-conceitos-básicos-da-orientação-a-objetos)
+- [CONCEITOS BÁSICOS](#conceitos-básicos)
+- [CLASSES](#classes)
+- [POR QUE TODO DESENVOLVEDOR PRECISA ENTENDER OS PARADIGMAS?](#por-que-todo-desenvolvedor-precisa-entender-os-paradigmas)
 
 </details>
 
 ---
 
-# INTRODUÇÃO AO JAVA: IDE, VARIÁVEIS E HELLO WORLD
+# AFINAL, O QUE É UM PARADIGMA EM LINGUAGEM DE PROGRAMAÇÃO?
 
-Criado pela ***Sun Microsystems*** (agora parte da Oracle Corportation) na década de 1990.
+Quando vamos fazer um bolo, existem diversas etapas durante o processo de preparo para que o resultado seja o esperado. Separar todos os ingredientes. medir, misturar os ingredientes secos, misturar os líquidos, acrescentar o fermente, bater e assar.
 
-Sua capacidade de rodar em diferentes plataformas sem a necessidade de alterações significativas no código fonte 
-tornou-a altamente procurada por desenvolvedores e empresas.
+A sequência de tarefas que foi proposta agora é um ***paradigma***.
 
-Outro fator que contribuiu para sua popularidade foi a sua arquitetura orientada a obbjetos, tornando o código mais 
-fácil de manter, modificar e estender, resultando em um código mais limpo, eficiente e de fácil manutenção.
+O ***paradigma*** é, portanto, um exemplo-guia, um modelo ou uma **forma de pensar** a solução para um problema.
 
-Além disso, a linguagem Java trouxe o conceito de "Write Once, Run Anywhere", graças à Máquina Virtual Java (***JVM - 
-Java Virtual Machine***). Permitindo que o código pudesse rodar em qualquer dispositivo ou sistema operacional que 
-tivesse a JVM instalada.
+Na programação, um paradigma é a maneira como pensamos e lidamos com as estruturas de programação.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+## Então existem diferentes formas de programar!
 
-# PLATAFORMA JAVA
+No paradigma procedural faltam recursos para tornar a relação entre os dados e os procedimentos mais próxima da realidade. Um exemplo simples é o de um programa que calcula a média aritmética entre duas notas de um aluno de um colégio.
 
-A Plataforma Java é um ambiente de software onde os programas escritos na linguagem Java são executados. Essa plataforma
-é composta por dois elementos:
-
-- Biblioteca de classes para o desenvolvimento de aplicações Java.
-- Java Virtual Machine que é o responsável por "executar" os programas Java.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-# EDIÇÕES DO JAVA
-
-| Edição | Descrição                                                                                                                                                                                                                                                                                                   |
-| :---: |:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ***JSE*** <br> ***Java Standart Edition*** | É a base da plataforma. Possui as principais bibliotecas da linguagem que são utilizadas nas outras edições. Essa edição contempla os tipos de dados e coleções de classes responsáveis por criar aplicações desktop, conectar com banco de dados, trabalhar com segurança e redes, além de manipular XML.  |
-| ***JEE*** <br> ***Java Enterprise Edition*** | É a versão Enterprise da plataforma Java, para desenvolvimento de sistema corporativos, web, escaláveis, distribuídos, que são executados dentro de servidores de aplicações.                                                                                                                               |
-| ***JME*** <br> ***Java Micro Edition*** | É a versão para sistemas embarcados e dispositivos móveis. Uma versão enxuta do Java, para rodar em dispositivos com menos recursos.                                                                                                                                                                        |
-
-Além dessas três edições principaius, o Java possui outras duas edições específicas:
-
-- ***Java Card***: Permite o desenvolvimento de pequenos aplicativos para serem executados em smart cards e dispositivos
-- similares, que possuem limitações de processamento.
-- ***JavaFX***: É utilizada para criar aplicações *Rich Internet Applications (RIA)*. Permite criar interfaces gráficas 
-- de usuário para qualquer plataforma, como desktop, web, mobile etc. 
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-# JAVA VIRTUAL MACHINE - JVM
-
-A JVM é responsável por interpretar (executar) os arquivos Java.
-
-A linguagem Java é **compilada** e **interpretada**. COmpilcação é o processo de "tradução" do programa escrito em 
-linguagem de programação para a linguagem de máquina, para que as instruções possam ser executadas pelo processador.
-
-Linguagens como C, C++ e Pascal são compilados para um sistema operacional e arquitetura de hardware específicos, ou 
-seja, depois do programa compilado, o código executável (binário) só funciona para aquele tipo de sistema operacional e 
-arquitetura de hardware.
-
-Os arquivos Java (extensão ***.java***) são compiladospara gerar os *bytecodes* (extensão ***.class***). Esses arquivos
-compilados são interpretados (executados) na JVM. E aqui está o pulo do gato, poiis cada sistema operacional possui uma 
-máquina virtual Java.
-
-![Compilação e Interpretação do código Java](img/img1.png)
+![Diagrama de solução procedural para média artmética](img/img1.png)
 
 <details close>
-    <summary><code>IMAGEM | Compilação e Interpretação do código Java</code></summary>
+    <summary><code>IMAGEM | Diagrama de solução procedural para média aritmética</code></summary>
 
-- Código Java (.java) é compilado para Bytecode (.class)
-- Bytecode é executado (interpretado) pela JVM
-- Cada sistema operacional possui uma JVM específica
-  - ***Linux 64-bit*: JVM Linux 64-bit**
-  - ***Linux 32-bit*: JVM Linux 32-bit**
-  - ***Windows 64-bit*: JVM Windows 64-bit**
-  - ***Windows 32-bit*: JVM Windows 32-bit**
-  - ***Mac OS*: JVM Mac OS**
+- Início
+- Declarar variáveis
+  - nome: String
+  - n1: Double
+  - n2: Double
+- "Digite o nome do aluno"
+- nome
+- "Digite as notas"
+- n1, n2
+- calcula_media(n1, n2) -> (n1 + n2) / 2
+- fim
 
 </details>
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+Quem faz a relação entre os valores das notas do aluno com a média obtida e o aluno em questão é o programados. Não há **nada** no paradigma usado que garanta que as notas pertençam ao aluno, ou mesmo que a nota e o aluno são informações que têm relação.
 
-# CONFIGURANDO O AMBIENTE DE DESENVOLVIMENTO
-
-Para executar um programa Java, a ***JRE (Java Runtime Environment)*** é o suficiente, pois ela possui tudo que é 
-necessário: a JVM e as bibliotecas. Porém, para desenvolver programas em Java é preciso da JDK, que é formado pela 
-*JRE* e diversas ferramentas essenciais como o ***javac (compilador)***, ***javadoc (documentação)***, ***jdb (debug)***
-e etc.
+Foi para resolver o problema de conseguirmos representar elementos reais no ambiente virtual que nasceu outro paradigma: a ***orientação a objetos***.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-# PRIMEIRO PROGRAMA EM JAVA
-
-Nesse primeiro momento, é importante compreender o processo: escrever o código Java, compilar com uma ferramenta que
-baixamos junto da JDK e depois interpretar o *bytecode* gerado pela compilação na JVM para executar o programa.
-
-Primeiramente, escrevemos o código:
-
-```java
-public class Teste {
-    public static void main (String args[]) {
-        System.out.println("Hello World!");
-    }
-}
-```
-
-Agora, salvar o arquivo em ***.java*** e não .txt, já que é um arquivo java.
-
-Depois, no terminal, vamos utilizar a ferramenta ***javac*** seguido do nome e extensão do arquivo que desejamos compilar
-
-```bash
-java Teste.java
-```
-
-O resultado é um arquivo criado com a extensão ***.class***, que é o *bytecode*, o código Java compilado!
-
-Para interpretar o bytecode na JVM, basta utilizar a ferramenta ***java*** seguido do nome do *bytecode*, assim o programa será executado!
-
-```bash
-java Teste
-```
-
-# AMBIENTE DE DESENVOLVIMENTO INTEGRADO (IDE)
-
-Para desenvolver as aplicações existem as ferramentas específicas, chamadas de IDEs (Integrated Development Environment). Essas ferramentas têm o objetivo de aumentar a produtividade e a eficiência do desenvolvedor, combinando diversas funcionalidades em uma única interface.
-
-Existem IDEs para linguagens específicas e outras que suportam uma variedade de linguagens de programação. Todas essas ferramentas possuem funcionalidades similares, como as mais comuns:
-
-- ***Editor*** para escrever o código-fonte na linguagem de programação suportada pela IDE
-- ***Compilador*** para compilar o código-fonte
-- ***Depurador (debugger)*** para executar o programa "passo-a-passo", ou seja, é possível verificar o que está acontecendo em cada instrução do programa, facilitando o entendimento do sistema e no processo de encontrar e corrigir bugs.
-- ***Geração de código*** para gerar código-fonte a partir de *templates* de código comumente utilizados para solucionar problemas rotineiros
-- ***Distribuição (Deploy)*** auta no auxilio do processo de gerar o artquivo final para a instalação do sistema desenvolvido ou até mesmo envia os arquivos para o servidor.
-- ***Git*** integração com o versionador de arquivos mais utilizados pelos desenvolvedores.
-- ***Modelagem*** para criação de modelos declasses, objetos, interfaces, associações e interações de forma visual.
-- ***Teste automatizados*** para realizar testes no programa de forma automatizada, baseados em scripts ou programas de testes previamente especificados, gerando relatórios que auxiliam na análise do impacto das alterações do código-fonte
-- ***Refatoração*** realiza a melhoria constante do código-fonte, pode ser na construção de código mais otimizado, limpo e/ou com melhor entedimento pelos envolvidos no desenvolvimento do sistema.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-# INSTALANDO O INTELLIJ IDEA
-
-Vai ao endereço do [IntelliJ IDEIA](https://bit.ly/3U9HWX5) no site da JetBrains e baixe o programa. Após baixado, instale o programa.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-# VARIÁVEIS E TIPOS PRIMITIVOS NO JAVA
+## Os conceitos básicos da Orientação a Objetos
 
 <details close>
-    <summary><code>VÍDEO | Java: Variáveis e Tipos</code></summary>
+    <summary><code>VÍDEO | Fundamentos da POO: os Pilares e as Classes</code></summary>
 
-8 tipos primitivos são tipos de dados especiais que armazenam somente valor:
-- byte, short, int, long
-- float, double
-- char
-- boolean
+1. Encapsulamento
+    - É a capacidade de esconder detalhes de implementação de um objeto, expondo apenas o que é necessário para o uso. 
+2. Abstração
+    - É a capacidade de representar objetos reais no ambiente virtual, simplificando a complexidade do mundo real.
+3. Herança
+    - É a capacidade de criar novas classes a partir de classes já existentes, aproveitando as características e comportamentos da classe mãe.
+4. Polimorfismo
+    - É a capacidade de um objeto se comportar de diferentes formas, dependendo do contexto em que é utilizado.
 
-Tipo de Referência é um tipo de dado que referenciamos uma posição de memória onde estará um objeto Java. Exemplo:
-- String
+Unidade básica da POO: a ***classe***.
 
-Declaração de variável:
-
-```java
-// Primitivos
-int idade;
-idade = 20;
-
-double altura = 1.80;
-
-char caractere = 'a';
-
-boolean especial = false;
-
-// de referência
-String palavra = "palavra";
-```
+Classe é uma estrutura base que define quais as informações importantes (atributos) que um objeto terá. Além disso, a classe define quais ações (***métodos***) o objeto poderá realizar.
 
 </details>
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+A ***POO*** (Programação Orientada a Objetos) é um estilo de programação que se baseia na ideia de que o mundo real pode ser modelado por meio de objetos. Esses objetos são representações de entidades ou conceitos do mundo real e contêm tanto seus atributos (características) quanto seus comportamentos (ações).
 
-# O QUE SÃO VARIÁVEIS?
+A interação entre os objetos ocorre através de troca de mensagens, em que um objeto solicita a outro objeto que execute algum comportamento específico. É um modelo que visa estruturar o código de forma mais organizada, modular e reutilizável.
 
-Variáveis são espaços de memória reservados para armazenas dados durante a execução de um programa.
+Vantagens da ***POO***:
 
-java é uma linguagem fortemente tipada, ou seja, para criar uma variável é preciso especificar o tipo de dado que ela irá armazenar e dar uma nome a ela. O tipo de dado determina o tamanho da variável na memória e os valores que ela pode armazenar.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-# TIPOS PRIMITIVOS EM JAVA
-
-Java possui oito tipos primitivos, que são os tipos de dados básicos que não são objetos.
-
-- ***byte***: representa números inteiros de 8 bits. O intervalo vai de -128 a 127.
-- ***short***: representa números inteiros de 16 bits. O intervalo vai de -32.768 a 32.767.
-- ***int***: representa números inteiros de 32 bits. O intervalo vai de -2.147.483.648 a 2.147.483.647.
-- ***long***: representa números inteiros de 64 bits. O intervalo vai de -9.223.372.036.854.775.808 a 9.223.372.036.854.775.807.
-- ***float***: representa números de ponto flutuante de 32 bits. Usado para valores com casas decimais.
-- ***double***: representa números de ponto flutuante de 64 bits. Mais preciso que o tipo float.
-- ***char***: representa um caracteree de 16 bits. Unicode de 16 bits.
-- ***boolean***: representa um valor lógico, podendo ser true ou false.
+- ***Reutilização de código***: objetos podem ser reutilizados em diferentes partes do programa.
+- ***Modularidade***: o código é dividido em classes e objetos independentes.
+- ***Manutenção facilitada***: mudanças em um objeto não afetam diretamente outros objetos.
+- ***Abstração***: foco nos aspectos importantes e ocultamento dos detalhes complexos.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-# DECLARANDO E INICIALIZANDO VARIÁVEIS
+# CONCEITOS BÁSICOS
 
-Para declarar uma variável em Java:
+Tudo começa pela ***classe***, que serve como modelo para criar objetos, especificando seus atributos (variáveis) e comportamentos (métodos). Atributos são variáveis que armazenam valores. Já os ***métodos*** são ações que o objeto pode executar.
 
-```java
-tipo nomeDaVariavel;
-```
-
-Para incializar a variável com valor específico:
-
-```java
-int idade;
-idade = 20;
-//ou
-int idade = 20;
-```
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-# REGRAS PARA NOMENCLATURA DE VARIÁVEIS
-
-- O nome da variável deve começar com uma letra ou underscore ( _ )
-- Não é permitido usar caracteres especiais, exceto o underscore ( _ )
-- O nome da variável não pode ser uma palavra reservada da linguagem Java.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-# EXEMPLO DE USO DE VARIÁVEIS E TIPOS PRIMITIVOS
-
-```java
-public class VariaveisExemplo {
-    public static void main(String[] args) {
-        // Declaração de variáveis
-        int idade = 20;
-        double altura = 1.83;
-        char caractere = 'a';
-        boolean especial = false;
-
-        // Exibindo os valores das variáveis
-        System.out.println("Idade: " + idade); // Idade: 20
-        System.out.println("Altura: " + altura); // Altura: 1.83
-        System.out.println("Caractere: " + caractere); // Caractere: a
-        System.out.println("Especial: " + especial); // Especial: false
-    }
-}
-```
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-# OPERADORES ARITMÉTICOS E ENTRADA DE DADOS EM JAVA
-
-<details close>
-    <summary><code>VÍDEO | Java: A Magia dos Operadores</code></summary>
-
-Operadores aritméticos:
-- Soma (+)
-- Subtração (-)
-- Multiplicação (*)
-- Divisão (/)
-- Módulo (%)
-  - Resto da divisão
-- Incremento (++)
-  - Incrementa o valor em uma unidade
-- Decremento (--)
-  - Decrementa o valor em uma unidade
-
-```java
-int x = 10;
-float x2 = 10;
-
-int y = 5;
-float y2 = 5;
-
-int z = 3
-float z2 = 3;
-
-int soma = x + y; // 15
-
-int subtracao = x - y; // 5
-
-int multiplicacao = x * y; // 50
-
-int divisao = x / z; // 3 (por ser int, o resultado é inteiro (mesmo que tenha casas decimais))
-float divisao2 = x2 / z2; // 3.3333333
-
-int modulo = x % z; // 1 (resto da divisão de 10 por 3)
-
-int incremento = x++; // 11
-
-int decremento = x--; // 9
-```
-
-</details>
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-# OPERADORES ARITMÉTICOS
-
-- **+ (Adição)**: Soma dois valores
-- **- (Subtração)**: Subtrai o segundo valor do primeiro
-- **\* (Multiplicação)**: Multiplica dois valores
-- **/ (Divisão)**: Divide o primeiro valor pelo segundo (cuidado com divisão por zero)
-- **% (Módulo)**: Retorna o resto da divisão do primeiro valor pelo segundo
-- **++ (Incremento)**: Incrementa o valor da variável em uma unidade
-- **-- (Decremento)**: Decrementa o valor da variável em uma unidade
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-# ENTRADA DE DADOS EM JAVA
-
-A entrada de dados permite que o usuário forneça informações ao programa enquanto ele está em execução. Para ler dados do usuário, utilizamos a classe Scanner da biblioteca padrão do Java.
-
-```java
-import java.util.Scanner;
-```
-
-```java
-Scanner scanner = new Scanner(System.in)
-```
-
-Para ler um valor numérico, utiliza-se ***nextInt()*** (para inteiro) ou ***nextDouble()*** (para valores de ponto flutuante).
-
-```java
-System.out.print("Digite um número inteiro: ");
-int numeroInteiro = scanner.nextInt();
-
-System.out.print("Digite um número decimal: ");
-double numeroDecimal = scanner.nextDouble();
-```
-
-Para ler uma sequência de caracteres, utiliza-se o ***nextLine()***.
-
-```java
-System.out.print("Digite seu nome: ");
-String nome = scanner.nextLine();
-```
-
-Lembre-se de fechar o objeto Scanner após a leitura dos dados.
-
-```java
-scanner.close();
-```
-
-| Tipo Primitivo | Método do Scanner |
+| Conceito | Descrição |
 | :--- | :--- |
-| byte | nextByte() |
-| short | nextShort() |
-| int | nextInt() |
-| long | nextLong() |
-| float | nextFloat() |
-| double | nextDouble() |
-| boolean | nextBoolean() |
+| ***ENCAPSULAMENTO*** | Encapsulamento é o princípio de esconder os detalhes internos do objeto e expor apenas uma interface bem definida para o mundo exterior. |
+| ***HERANÇA*** | A herança permite criar uma classe baseada em outra classe existente, herdando seus atributos e métodos. Isso promove a reutilização de código e a criação de hierarquias de classes, permitindo que classes filhas herder características das classes pai. |
+| ***POLIMORFISMO*** | O polimorfismo permite que objetos de diferentes classes sejam tratados de maneira uniforme através de uma classe base comum. Isso permite escrever código mais genérico e flexível, adaptando-se automaticamente às diferentes classes que implementam o mesmo contrato. |
+| ***ABSTRAÇÃO*** | A abstração é a representação de um objeto do mundo real em forma de código, enforcando apenas os detalhes relevantes e ignorando aqueles irrelevantes. Isso ajuda a simplificar o design e a melhorar a compreensão do código. |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-# AGORA É SUA VEZ!
+# CLASSES
 
-[Calcular a média de um aluno](./applications/CalcularMediaAluno/src/main/java/org/example/Main.java) (Arquivo java dentro de *applications/*).
+Uma classe é como um esboço detalhado que você cria antes de fazer um desenho.
+
+Dentro de uma classe você define atributos (que são as características do objeto) e métodos (que são as ações que o objeto pode realizar).
+
+Uma classe é como um plano detalhado para criar objetos em seu programa. Ela define quais informações e ações os objetos terão. Essa estrutura organizada e detalhada torna mais fácil criar e controlar os objetos em um sistema de maneira eficiente e organizada.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+# POR QUE TODO DESENVOLVEDOR PRECISA ENTENDER OS PARADIGMAS?
+
+Imaginando múltiplos cenários de aplicações, é possível perceber que cada um deles pode ser mais bem resolvido com um paradigma específico, seja ele com programação estruturada ou programação orientada a objetos. Por isso, é importante que o desenvolvedor conheça os paradigmas existentes e saiba quando e como aplicá-los.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
