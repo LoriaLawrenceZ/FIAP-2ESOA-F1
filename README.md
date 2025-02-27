@@ -9,27 +9,30 @@
 <details>
     <summary><span>📌 Índice</span></summary>
 
-- [INTRODUÇÃO AO JAVA: IDE\< VARIÁVEIS E HELLO WORLD](#introdução-ao-java-ide-variáveis-e-hello-world)
+- [INTRODUÇÃO AO JAVA: IDE, VARIÁVEIS E HELLO WORLD](#introdução-ao-java-ide-variáveis-e-hello-world)
 - [PLATAFORMA JAVA](#plataforma-java)
 - [EDIÇÕES DO JAVA](#edições-do-java)
 - [JAVA VIRTUAL MACHINE - JVM](#java-virtual-machine---jvm)
 - [CONFIGURANDO O AMBIENTE DE DESENVOLVIMENTO](#configurando-o-ambiente-de-desenvolvimento)
 - [PRIMEIRO PROGRAMA EM JAVA](#primeiro-programa-em-java)
 - [AMBIENTE DE DESENVOLVIMENTO INTEGRADO (IDE)](#ambiente-de-desenvolvimento-integrado-ide)
-- [INTALANDO O INTELLIJ IDEA](#intalando-o-intellij-idea)
+- [INSTALANDO O INTELLIJ IDEA](#instalando-o-intellij-idea)
 - [VARIÁVEIS E TIPOS PRIMITIVOS NO JAVA](#variáveis-e-tipos-primitivos-no-java)
 - [O QUE SÃO VARIÁVEIS?](#o-que-são-variáveis)
 - [TIPOS PRIMITIVOS EM JAVA](#tipos-primitivos-em-java)
 - [DECLARANDO E INICIALIZANDO VARIÁVEIS](#declarando-e-inicializando-variáveis)
 - [REGRAS PARA NOMENCLATURA DE VARIÁVEIS](#regras-para-nomenclatura-de-variáveis)
 - [EXEMPLO DE USO DE VARIÁVEIS E TIPOS PRIMITIVOS](#exemplo-de-uso-de-variáveis-e-tipos-primitivos)
-- [OPERADORES ARITMÉTICOS E ENTRADA DED ADOS EM JAVA](#operadores-aritméticos-e-entrada-ded-ados-em-java)
+- [OPERADORES ARITMÉTICOS E ENTRADA DE DADOS EM JAVA](#operadores-aritméticos-e-entrada-de-dados-em-java)
+- [OPERADORES ARITMÉTICOS](#operadores-aritméticos)
+- [ENTRADA DE DADOS EM JAVA](#entrada-de-dados-em-java)
+- [AGORA É SUA VEZ!](#agora-é-sua-vez)
 
 </details>
 
 ---
 
-# INTRODUÇÃO AO JAVA: IDE< VARIÁVEIS E HELLO WORLD
+# INTRODUÇÃO AO JAVA: IDE, VARIÁVEIS E HELLO WORLD
 
 Criado pela ***Sun Microsystems*** (agora parte da Oracle Corportation) na década de 1990.
 
@@ -163,7 +166,7 @@ Existem IDEs para linguagens específicas e outras que suportam uma variedade de
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-# INTALANDO O INTELLIJ IDEA
+# INSTALANDO O INTELLIJ IDEA
 
 Vai ao endereço do [IntelliJ IDEIA](https://bit.ly/3U9HWX5) no site da JetBrains e baixe o programa. Após baixado, instale o programa.
 
@@ -276,19 +279,114 @@ public class VariaveisExemplo {
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-# OPERADORES ARITMÉTICOS E ENTRADA DED ADOS EM JAVA
+# OPERADORES ARITMÉTICOS E ENTRADA DE DADOS EM JAVA
 
 <details close>
     <summary><code>VÍDEO | Java: A Magia dos Operadores</code></summary>
 
+Operadores aritméticos:
+- Soma (+)
+- Subtração (-)
+- Multiplicação (*)
+- Divisão (/)
+- Módulo (%)
+  - Resto da divisão
+- Incremento (++)
+  - Incrementa o valor em uma unidade
+- Decremento (--)
+  - Decrementa o valor em uma unidade
 
+```java
+int x = 10;
+float x2 = 10;
+
+int y = 5;
+float y2 = 5;
+
+int z = 3
+float z2 = 3;
+
+int soma = x + y; // 15
+
+int subtracao = x - y; // 5
+
+int multiplicacao = x * y; // 50
+
+int divisao = x / z; // 3 (por ser int, o resultado é inteiro (mesmo que tenha casas decimais))
+float divisao2 = x2 / z2; // 3.3333333
+
+int modulo = x % z; // 1 (resto da divisão de 10 por 3)
+
+int incremento = x++; // 11
+
+int decremento = x--; // 9
+```
 
 </details>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+# OPERADORES ARITMÉTICOS
+
+- **+ (Adição)**: Soma dois valores
+- **- (Subtração)**: Subtrai o segundo valor do primeiro
+- **\* (Multiplicação)**: Multiplica dois valores
+- **/ (Divisão)**: Divide o primeiro valor pelo segundo (cuidado com divisão por zero)
+- **% (Módulo)**: Retorna o resto da divisão do primeiro valor pelo segundo
+- **++ (Incremento)**: Incrementa o valor da variável em uma unidade
+- **-- (Decremento)**: Decrementa o valor da variável em uma unidade
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+# ENTRADA DE DADOS EM JAVA
+
+A entrada de dados permite que o usuário forneça informações ao programa enquanto ele está em execução. Para ler dados do usuário, utilizamos a classe Scanner da biblioteca padrão do Java.
+
+```java
+import java.util.Scanner;
+```
+
+```java
+Scanner scanner = new Scanner(System.in)
+```
+
+Para ler um valor numérico, utiliza-se ***nextInt()*** (para inteiro) ou ***nextDouble()*** (para valores de ponto flutuante).
+
+```java
+System.out.print("Digite um número inteiro: ");
+int numeroInteiro = scanner.nextInt();
+
+System.out.print("Digite um número decimal: ");
+double numeroDecimal = scanner.nextDouble();
+```
+
+Para ler uma sequência de caracteres, utiliza-se o ***nextLine()***.
+
+```java
+System.out.print("Digite seu nome: ");
+String nome = scanner.nextLine();
+```
+
+Lembre-se de fechar o objeto Scanner após a leitura dos dados.
+
+```java
+scanner.close();
+```
+
+| Tipo Primitivo | Método do Scanner |
+| :--- | :--- |
+| byte | nextByte() |
+| short | nextShort() |
+| int | nextInt() |
+| long | nextLong() |
+| float | nextFloat() |
+| double | nextDouble() |
+| boolean | nextBoolean() |
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+# AGORA É SUA VEZ!
+
+[Calcular a média de um aluno](./applications/CalcularMediaAluno.java) (Arquivo java dentro de *applications/*).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
