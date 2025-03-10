@@ -284,6 +284,55 @@ A primeiro momento, devemos considerar apenas que essas informações são compl
 
 A camada de aplicação é a camada que fornce aos programas de rede os padrões para que possam se comunicar por meio de uma rede com outros programas.
 
+Alguns programas específicos são levados em conta nessa camada. Eles proveem serviços que fornecem suporte direto às aplicações do usuário. Esses programas e seus correspondentes protocolos incluem:
+
+- ***HTTP*** (Hypertext Transfer Protocol): para navegação na World Wide Web.
+- ***FTP*** (File Transfer Protocol): para transporte de arquivos.
+- ***SMTP*** (Simple Mail Transfer Protocol): para envio de e-mails.
+- ***SSH*** (Secure Shell): para login remoto seguro.
+- ***DNS*** (Domain Name System): para tradução de endereços
+- E muitos outros
+
+Uma vez que o dado de uma aplicação foi codificado dentro de um padrão de um protocolo da camada de aplicação, ele será passado para a próxima camada da pilha IP: a camada de transporte.
+
+No nosso exemplo , a comunicação entre o cliente (notebook na LAN 1) e o servidor (também na LAN 1) terá iício a partir da execução do *software* responsável pela requisição da página WWW, um navegador *web* (ou *web browser*). Ao executar um navegador *web*, o *software* escolhido estará preparado para fazer uso do protocolo de camada de aplicação para acesso ao serviço escolhido: o protocolo ***HTTP***.
+
+![Requisição de uma página *web* a partir de um navegador *web*](img/img9.png)
+
+<details close>
+    <summary><code>IMAGEM | Requisição de uma página *web* a partir de um navegador *web*</code></summary>
+
+Web Browser (Notebook) aberto com URL informada www.fiap.com.br.
+
+</details>
+
+No exemplo, a página requisitada está no endereço virtual (***URL*** - *Uniform Resource Locator*) www.fiap.com.br .
+
+Apesar de não ter sido informado o protocolo HTTP inicialmente, o navegador *web* identifica que esse será o protocolo a ser utilizado e complementa a URL fornecida com essa informaão após o usuário pressionar "enter". Cabe enfatizar que isso ocorre pelo fato de que o navegador *web* ter sido desenvolvido seguindo as definições do protocolo HTTP.
+
+>**Observação**: o primeiro passo no processo de comunicação será uma consulta a um serviço ***DNS*** (*Domain Name System*) para a tradução do endereço URL www.fiap.com.br no endereço ***IP*** (*Internet Protocol*) utilizado pelo servidor que hospeda a página *web* requisitada. Para simplificar, será considerado que o endereço foi traduzido para o IP 192.168.1.2, que é o endereço do servidor, assim podendo concentrar no funcionamento do protocolo HTTP.
+
+No primeiro, o *software* cliente (navegador *web*) seguirá os procedimentos definidos na camada de aplicação da arquitetura TCP/IP para, entre outras ações, organizar uma requisição HTTP (**HTTP *request***) a ser encaminhada pela rede até alcançar a camada de aplicação do servidor correspondente.
+
+![Etapa 1: a camada de aplicação](img/img10.png)
+
+<details close>
+    <summary><code>IMAGEM | **Etapa 1**: a camada de aplicação</code></summary>
+
+| | Arquitetura TCP/IP | |
+| :---: | :---: | :---: |
+| **http** request | **Aplicação** | Etapa 1|
+| | **Transporte** | |
+| | **Rede** | |
+| | **Acesso à Rede** | |
+| | Notebook | |
+
+</details>
+
+Entretanto, a requisição não é encaminhada diretamente para a camada de aplicação do servidor. Antes que essa requisição alcance o meio de transmissão da rede de comunicação, deverá ser encaminhada à camada seguinte, a camada de transporte.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## Passo 2: A Camada de Transporte
 
 ## Passo 3: A Camada de Rede
