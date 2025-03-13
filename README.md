@@ -516,7 +516,3 @@ Finalmente a resposta será processada pelo navegador web e apresentada ao usuá
 ![Conteúdo da página requisitada](img/img18.png)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-# CONSIDERAÇÕES FINAIS
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
