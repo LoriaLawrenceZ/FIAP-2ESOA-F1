@@ -335,17 +335,188 @@ Entretanto, a requisição não é encaminhada diretamente para a camada de apli
 
 ## Passo 2: A Camada de Transporte
 
+Os protocolos na camada de transporte podem resolver problemas como *confiabilidade* (o dado alcançou seu destino?) e *integridade* (os dados chegaram na ordem correta?). Na pilha de protocolos TCP/IP, os protocolos de transporte também determinam para qual aplicação um dado qualquer é destinado, por meio de uma associação de um endereço de porta (TCP ou UDP) à aplicação.
+
+Na camada de transporte, aplicações irão, em sua maioria, fazer uso de um protocolo denominado ***TCP*** (*Transfer Control Protocol*) ou de um protocolo denominado ***UDP*** (*User Datagrama Protocol*), e aplicações são frequentemente associadas com um número de *porta* de conexão (um endereço que identificará a aplicação) em um desses endereços. Portas para aplicações servidores são oficialmente definidas por um órgão internacional denominado ***IANA*** (*Internet Assigned Numbers Authority*), mas desenvolvedores de novos protocolos frequentemente escolhem os númeos de portas por convicção própria.
+
+Uma vez que é raro ter mais que alguns poucos programas servidores no mesmo servidor, problemas com conflito de portas são raros. Aplicações também geralmente permitem que o usuário especifique números de portas arbitrários por intermédio de parâmetros em tempo de execução.
+
+Em nosso exemplo, a requisição HTTP estruturada na camada de aplicação é encaminhada para a camada de transporte. Uma vez que o protocolo HTTP define que deverá ser utilizado o protocolo TCP na camada de transporte (em vez do UDP), ela está preparada para acrescentar à requisição HTTP recebida da camada de aplicação as informações correspondentes na camada de transporte. No eosso exemplo, serão acrescentadas as informações de porta TCP de origem (para identificar a aplicação do cliente) e a porta TCP de destino (que identificará a aplicação de destino no servidor).
+
+![Etapa 2: a camada de transporte](img/img11.png)
+
+<details close>
+    <summary><code>IMAGEM | **Etapa 2**: a camada de transporte</code></summary>
+
+| | | | Arquitetura TCP/IP | |
+| :---: | :---: | :---: | :---: | :---: |
+| | **http** request | **Aplicação** | |
+| **TCP** <br> Origem: 49380 <br> Destino: 80 | **http** request | **Transporte** | Etapa 2 |
+| | | **Rede** | |
+| | | **Acesso à Rede** | |
+| | | Notebook | |
+
+</details>
+
+As informações da requisição HTTP recebidas da camada de aplicação são concatenadas com as informações da camada de transporte na etapa 2. A esse agrupamento (frequentemente referenciado como ***PDU*** - *Protocol Data Unit*) é dado o nome de ***segmento***. Assim, quando falamos em segmento, estamos nos referindo à *PDU* da camada de transporte (que contém informações da própria camada e as informações da camada de aplicação)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## Passo 3: A Camada de Rede
 
-## PAsso 4: A Camada de Acesso à Rede
+A camada de rede é responsável por receber a *PDU* da camada de transporte (o segmento) e acrescentar informações de endereçamento que permitam identificar o equipamento de origem e o equipamento de destino na comunicação. Em uma analogia à comincação por cartas, seria o equivalente a acrescentar o endereço do remetente e do destinatário, o que permitirá que a carta alcance seu destino e o receptor saiba o endereço caso deseje enviar uma outra carta em resposta.
+
+O endereço utilizado na camada de rede é definido pelo protocolo ***IP*** (*Internet Protocol*) e comumente referenciado como endereço IP. Ao acrescentar as informações da camada de rede à *PDU* recebida da camada de transporte, temos um novo *PDU* que recebe o nome de ***pacote***. Então, quando nos referimos a pacote de dados, estamos nos referindo a uma *PDU* da camada de rede.
+
+Além disso, a estrutura de endereços acrescentada pela camada de rede permitirá que os pacotes sejam roteados (seja realizado o roteamento) por meio de redes distintas até que alcancem o seu destino. Roteamento, neste caso, refere-se à escolha do melhor caminho entre uma origem e um destino, considerando que há a possibilidade de diversos caminhos entre uma origem e um destino na Internet.
+
+Em nosso exemplo, a camada de rede acrescentará ao segmento recebido da camada de transporte o endereço IP do notebook (endereço IP 192.168.1.3) e o endereço IP do servidor (192.168.1.2).
+
+![Etapa 3: a camada de rede](img/img12.png)
+
+<details close>
+    <summary><code>IMAGEM | **Etapa 3**: a camada de rede</code></summary>
+
+| | | | | Arquitetura TCP/IP | |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| | | **http** request | **Aplicação** | |
+| | **TCP** <br> Origem: 49380 <br> Destino: 80 | **http** request | **Transporte** | |
+| **IP** <br> Origem: 192.168.1.3 <br> Destino: 192.168.1.2 | **TCP** <br> Origem: 49380 <br> Destino: 80 | **http** request | **Rede** | Etapa 3|
+| | | | **Acesso à Rede** | |
+| | | | Notebook | |
+
+</details>
+
+O próximo passo será encaminhar o *pacote* (*PDU* da camada de rede) para a próxima camada: a camada de acesso à rede, também referenciada como camada de enlace ou de ligação de dados.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Passo 4: A Camada de Acesso à Rede
+
+Pode-se compreender a camada de acesso à rede muito mais como um processo que poder ser controlado tanto em *software* (*device driver*) para a *interface de rede* (cabeada ou wireless) quanto em *firmware* ou *chipsets* especializados presentes no hardware. Esses executarão as funções da camada de acesso à rede, como adicionar endereços da interface de rede dos equipamentos aos pacotes recebidos na camada de rede e prepará-lo para transmissão por intermédio da camada física.
+
+A camada de enlace executa muitas outras funções e acrescenta muitas outras informações que compõem um cabeçalho (*header*) aos pacotes recebidos da camada de rede.
+
+O pacote recebido da camada de rede após receber as informações da camada de acesso à rede passa a se chamar ***quadro***. Assim, quando nos referimos a um quadro de dados, estamos nos referindo a uma *PDU* da camada de enlace.. Então, quando fazemos referência a um *quadro* (*frame*) em comunicação estamos fazendo referência à *P*DU* da camada de acesso à rede.
+
+No nosso exemplo, a camada de acesso à rede na origem (notebook na LAN 1) acrescentará os endereços físicos (endereço MAC) da interface de rede que será utilizada pelo notebook para a transmissão do quadro e, ainda, o endereço físico (endereço MAC) da interface de rede do servidor que receberá o quadro (já que ele está na mesma rede, dado que esse procedimento seria um pouco diferente se o servidor estivesse em outra rede).
+
+![Etapa 4: a camada de acesso à rede](img/img13.png)
+
+<details close>
+    <summary><code>IMAGEM | **Etapa 3**: a camada de rede</code></summary>
+
+| | | | | | Arquitetura TCP/IP | |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| | | | **http** request | **Aplicação** | |
+| | | **TCP** <br> Origem: 49380 <br> Destino: 80 | **http** request | **Transporte** | |
+| | **IP** <br> Origem: 192.168.1.3 <br> Destino: 192.168.1.2 | **TCP** <br> Origem: 49380 <br> Destino: 80 | **http** request | **Rede** | |
+| **MAC** <br> Origem: 000A.4124.9C05 <br> Destino: 0090.2B52.1918 | **IP** <br> Origem: 192.168.1.3 <br> Destino: 192.168.1.2 | **TCP** <br> Origem: 49380 <br> Destino: 80 | **http** request | **Acesso à Rede** | Etapa 4 |
+| | | | | Notebook | |
+
+</details>
+
+Um dado muito importante é que os quadros existem apenas no âmbito das redes locais. Quando o destino de um quadro for um equipamento fora da rede local, em vez da camada de enlace acrescentar o endereço MAC do equipamento de destino, acrescentará o endereço MAC da interface de *gateway* (porta do roteador que servirá de saída para a rede local). O *gateway* removerá as informações do quadro e encaminhará pacotes para a próxima rede. Assim, os pacotes serão roteados até alcançarem a rede de destino.
+
+![Um quadro pronto para ser encaminhado para a rede local](img/img14.png)
+
+<details close>
+    <summary><code>IMAGEM | Um quadro pronto para ser encaminhado para a rede local</code></summary>
+
+| LAN 1 <br> (empresa) | | LAN 2 <br> (residência) |
+|:---------:|:---:|:---------:|
+| &#8595; &#8592; | Internet | &#8594; &#8595; |
+| Roteador | | Roteador WiFi doméstico |
+| Switch | | Printer1 |
+| Servidor1 | | Smartphone2 |
+| Printer0 | | Tablet PC0 |
+| Notebook <br> ***quadro*** | | Notebook doméstico |
+| Desktop1 | | |
+| Desktop2 | | |
+
+</details>
+
+O quadro será transmitido pela rede local por intermédio do meio de transmissão existente (cabos metálicos de par trançado, sinal wireless etc.)
+
+No exemplo, o notebook está conectado a um equipamento switch, que é um equipamento tipicamente de camada 2. Aqui cabe lembrar que, quando nos referimos a equipamentos, frequentemente utilizamos o modelo **OSI** e não mais a arquitetura **TCP/IP**. Assim,s eguindo o padrão de mercado, dizemos que o switch é um dispositivo de camada 2 do modelo *OSI* da *ISO* (camada de enlace). Uma vez que o switch é um equipamento de camada 2, possui capacidade para receber o quadro e interpretar as informações da camada 2 (ou de acesso à rede do modelo TCP/IP): ou seja, o switch é capaz de interpretar os endereços MAC adicionados pela camada de acesso à rede e fazer o encaminhamento do quadro para o seu destino, o servidor localizado na rede LAN 1.
+
+O switch receberá o quadro encaminhado pela interface de rede do notebook por meio de transmissão existente e, em seguida, annalisará os endereços da camada 2 antes de encaminhar o quadro ao seu destino correto.
+
+![Análise do quadro pelo switch (1)](img/img15.png)
+
+<details close>
+    <summary><code>IMAGEM | Análise do quadro pelo switch (1)</code></summary>
+
+| LAN 1 <br> (empresa) | | LAN 2 <br> (residência) |
+|:---------:|:---:|:---------:|
+| &#8595; &#8592; | Internet | &#8594; &#8595; |
+| Roteador | | Roteador WiFi doméstico |
+| Switch <br> ***quadro*** | | Printer1 |
+| Servidor1 | | Smartphone2 |
+| Printer0 | | Tablet PC0 |
+| Notebook | | Notebook doméstico |
+| Desktop1 | | |
+| Desktop2 | | |
+
+</details>
+
+Ao alcançar seu destino, a interface de rede do servidor retirará o quadro do meio de transmissão e um processo inverso ocorrerá.
+
+![O quadro alcança o seu destino](img/img16.png)
+
+<details close>
+    <summary><code>IMAGEM | O quadro alcança o seu destino</code></summary>
+
+| LAN 1 <br> (empresa) | | LAN 2 <br> (residência) |
+|:---------:|:---:|:---------:|
+| &#8595; &#8592; | Internet | &#8594; &#8595; |
+| Roteador | | Roteador WiFi doméstico |
+| Switch | | Printer1 |
+| Servidor1 <br> ***quadro*** | | Smartphone2 |
+| Printer0 | | Tablet PC0 |
+| Notebook | | Notebook doméstico |
+| Desktop1 | | |
+| Desktop2 | | |
+
+</details>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Análise Realizada pelos Protocolos no Destino
+
+É possível identificar que cada camada tem como função adicionar informações respectivas à própria camada (um cabeçalho) aos dados do usuário a serem transmitidos para outro sistema. Desse modo, a função de cada camada do outro sistema é exatamente a inversa, ou seja, retirar os cabeçalhos dos dados que chegam e entregá-los ao usuário em sua forma original.
+
+![Análise pelas camadas de arquitetura TCP/IP no servidor](img/img17.png)
+
+<details close>
+    <summary><code>IMAGEM | **Etapa 3**: a camada de rede</code></summary>
+
+| Arquitetura TCP/IP | | | | | | |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **Aplicação** | Etapa 4 | Análise dos dados da camada: *requisição http* | | | | ***http** request* |
+| **Transporte** | Etapa 3 | Análise dos dados da camada: *endereço de portas TCP* | | | **TCP** <br> Origem: 49380 <br> Destino: 80 | ***http** request* |
+| **Rede** | Etapa 2 | Análise dos dados da camada: *endereço IP* | | **IP** <br> Origem: 192.168.1.3 <br> Destino: 192.168.1.2 | **TCP** <br> Origem: 49380 <br> Destino: 80 | ***http** request* |
+| **Acesso à Rede** | Etapa 1 | Análise dos dados da camada: *MAC* | **MAC** <br> Origem: 000A.4124.9C05 <br> Destino: 0090.2B52.1918 | **IP** <br> Origem: 192.168.1.3 <br> Destino: 192.168.1.2 | **TCP** <br> Origem: 49380 <br> Destino: 80 | ***http** request* |
+| **Servidor** | | &#8593; <br> Pacote de dados recebido pelo servidor | | | | | |
+
+</details>
+
+No exemplo, após receber o quadro pela interface de rede, o equipamento de destino (o servidor) passará a analisar as informações encaminhadas pela origem da comunicação (o notebook). Cada camada da arquitetura TCP/IP realizará a análise da informação encaminhada por sua camada equivalente na origem.
+
+A camada de acesso à rede no servidor dará início à etapa 1: analisará as informações colocadas no quadro pela camada de acesso à rede do equipamento de origem. Em seguida, irá remover as informações do quadro e entregará o pacote à camada de rede, que dará início à segunda etapa.
+
+Na segunda etapa, a camada de rede analisará as informações acrescentadas pela camada de rede do equipamento de origem, removendo essas informações em seguida e entregando o segmento para a camada de transporte.
+
+A camada de transporte, ao receber o segmento, dará início à etapa 3, analisando as informações acrescentadas pela camada de transporte do equipamento de origem. As informações permitirão o encaminhamento da requisição à aplicação responsável pelo atendimento da requisição HTTP. A requisição será entregue à aplicação correta no servidor, que irá analisar e preparar a resposta.
+
+Assim, uma resposta será preparada seguindo os mesmos passos descritos anteriormente: quando o notebook preparou uma requisição HTTP a ser encaminhada ao servidor. A resposta passará por todas as camadas no servidor, anhará o meio de transmissão e alcançará o notebook. Ao alcançar o notebook, a resposta passará por todas as camadas atré alcançar o navegadot web responsável pela requisição.
+
+Finalmente a resposta será processada pelo navegador web e apresentada ao usuário.
+
+![Conteúdo da página requisitada](img/img18.png)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 # CONSIDERAÇÕES FINAIS
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
