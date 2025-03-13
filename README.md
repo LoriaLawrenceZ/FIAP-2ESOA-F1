@@ -1,7 +1,3 @@
-# FIAP-2ESOA-F1
-Repositório de Estudos da FIAP Segundo ano FASE 1
-
-
 <h1 align=center>FIAP - 2ESOA | FASE 1</h1>
 
 >**FASE 5 - *A Fantástica Fábrica de Software***
