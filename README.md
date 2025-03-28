@@ -16,17 +16,17 @@
     <summary><span>📌 Índice</span></summary>
 
 - [DAS ORIGENS DAS REDES À INDEPENDÊNCIA DOS NÍVEIS DE EVOLUÇÃO](#das-origens-das-redes-à-independência-dos-níveis-de-evolução)
+- [MODELO OSI](#modelo-osi)
 - [MODELO OSI DA ISO](#modelo-osi-da-iso)
 - [A PILHA DE PROTOCOLOS NA ARQUITETURA TCP/IP](#a-pilha-de-protocolos-na-arquitetura-tcpip)
-    - [Comparação entre o modelo OSI e TCP/IP](#comparação-entre-o-modelo-osi-e-tcpip)
+  - [Comparação entre o modelo OSI e TCP/IP](#comparação-entre-o-modelo-osi-e-tcpip)
 - [A COMUNICAÇÃO EM REDES SEGUINDO UMA ARQUITETURA](#a-comunicação-em-redes-seguindo-uma-arquitetura)
 - [EXEMPLO DE COMUNICAÇÃO SEGUINDO A ARQUITETURA TCP/IP](#exemplo-de-comunicação-seguindo-a-arquitetura-tcpip)
-    - [Passo 1: A Camada de Aplicação](#passo-1-a-camada-de-aplicação)
-    - [Passo 2: A Camada de Transporte](#passo-2-a-camada-de-transporte)
-    - [Passo 3: A Camada de Rede](#passo-3-a-camada-de-rede)
-    - [PAsso 4: A Camada de Acesso à Rede](#passo-4-a-camada-de-acesso-à-rede)
-    - [Análise Realizada pelos Protocolos no Destino](#análise-realizada-pelos-protocolos-no-destino)
-- [CONSIDERAÇÕES FINAIS](#considerações-finais)
+  - [Passo 1: A Camada de Aplicação](#passo-1-a-camada-de-aplicação)
+  - [Passo 2: A Camada de Transporte](#passo-2-a-camada-de-transporte)
+  - [Passo 3: A Camada de Rede](#passo-3-a-camada-de-rede)
+  - [Passo 4: A Camada de Acesso à Rede](#passo-4-a-camada-de-acesso-à-rede)
+  - [Análise Realizada pelos Protocolos no Destino](#análise-realizada-pelos-protocolos-no-destino)
 
 </details>
 
