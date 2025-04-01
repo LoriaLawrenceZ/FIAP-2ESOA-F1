@@ -41,9 +41,12 @@
 
 # REPRESENTAÇÃO DE INFORMAÇÃO EM SISTEMAS COMPUTACIONAIS
 
-<details close>
-    <summary><code>VÍDEO | Definição de Estruturas de Dados</code></summary>
+![Esquema de entrada de dados, processamento e saída de resultados](img/img1.png)
 
+<details close>
+    <summary><code>IMAGEM | Esquema de entrada de dados, processamento e saída de resultados</code></summary>
+
+Dados Metereológicos ->  PROCESSAMENTO -> Informações: possibilidade de chuva
 
 </details>
 
@@ -51,13 +54,36 @@
 
 ## Tipos de Dados
 
+O que é um tipo de dado?
+
+> - São valores que podem ser assumidos.
+> - Operações que possam ser efetuadas
+
+Por exemplo, tipo de dado inteiro:
+
+- Valores que representam quantidades contáveis de objetos.
+- Operações: soma, subtração, multiplicação, divisão e resto da divisão.
+
+Alguns tipos de dados são compreendidos diretamente pelo processador, ou seja, na arquitetura interna do processador estão presentes unidades de aritmética que realizam as operações sobre esses tipos de dados. Esses tipos são ditos *dados **primitivos***, normalmente, são númetos inteiros com ou sem sinal, reais e caracteres.
+
+Para facilitar o uso de dados por programas, são definidos os tipos compoostos de dados, também conhecidos como *dados estruturados*, que são compostos internamente por vários dados primitivos ou não. Exemplos desses tipos de dados já estudados: vetores, matrizes e registros (dados de tipos diferentes são agrupados em um dado do tipo registro).
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Tipos Abstratos de Dados vs Tipos "Concretos" de Dados
 
+> Deve-se distinguir tipos ***abstratos*** de dados e tipos ***concretos*** de dados
+
+- ***Tipos abstratos de dados (TAD)***: especificam as propriedades lógicas e matemáticas de um tipo de dados ou estrutura, tornando-se guias úteis para os programadores. Desta forma, um **TAD** não precisa levar em consideração como será o tipo de dado concreto que será usado no computador.
+- ***Tipos concretos de dados***: são aqueles escolhidos dentro das opções de tipos de dados oferecidos pela arquitetura do computador, ou seja, dentro das limitações inerentes do mundo digital.
+
+Na definição de um TAD, não é usual a preocupação com tempo, eficiência de processamento ou limitações de espaço, que são problemas de implementação. Não vamos estudar todas as técnicas e notações de **TAD**s, mas, sim, o uso de algumas delas em problemas de programação, com a finalidade de elaborarmos códigos que usem eficientemente os dados no processamento de aplicações.
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 # ORGANIZANDO DADOS EM ESTRUTURAS DE *LISTAS LINEARES*
+
+## Entendendo o que são Listas Lineares
 
 <details close>
     <summary><code>VÍDEO | Definindo Listas Lineares Encadeadas</code></summary>
