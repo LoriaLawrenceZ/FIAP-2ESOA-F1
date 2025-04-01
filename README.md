@@ -88,12 +88,113 @@ Na definição de um TAD, não é usual a preocupação com tempo, eficiência d
 <details close>
     <summary><code>VÍDEO | Definindo Listas Lineares Encadeadas</code></summary>
 
+- Lista linear é uma estrutura de dados que armazena uma coleção de elementos em uma sequência linear.
+- Lista linear encadeada é uma lista linear onde cada elemento contém um ponteiro para o próximo elemento da lista.
+
+#### Como implementar e representar cada elemento de uma lista linear encadeada?
+
+Cada elemento deve conter
+
+- Dado que presica precisa ser armazenado na lista;
+- Ponteiro ou referência de onde está o seu sucessor.
+
+Elemento passa a ser chamada de **NÓ** ou **NODO**
+
+- Dado | Ponteiro para o próximo nó
+
+#### Declaração de cada nó em linguagem algorítmica
+
+**NÓ**
+- *Início*
+    - **Dado**: tipo_do_elemento da lista
+    - **Próximo**: ponteiro para o próximo nó
+- *Fim*
+
+LISTA
+- | Dado 01 | Referência | -> | Dado 02 | Referência | -> | Dado 03 | Referência | -> FIM
 
 </details>
+
+No dia a dia, temos a necessidade de agrupas dados que apresentam alguma relação e que precisamos lembrar. Normalmente, criamos listas como:
+
+- Listas de compras para irmos ao supermecado
+- Listas de tarefas a serem realizadas no trabalho
+- Listas de convidados para um festa etc.
+
+Em desencolcimento de sistemas de computação, também são necessárias listas. Exemplos:
+
+- Listas de arquivos a serem impressos
+- Lista de solicitações de acesso para consulta de servidor de um banco de dados etc.
+
+Contudo, analisando as aplicações que usam listas em computação, podemos observar que não basta criar um conjunto de elementos, precisamos, sim, definir uma ordem para que sejamos justos com os usuários que solicitaram algum serviço. Assim:
+
+> Lista de arquivos a serem impressos:
+>
+> - Se vários usuários solicitam a impressão de arquivos, é justo que o primeiro que solicitou seja o primeiro a ser impresso.
+>
+> Lista de solicitações de acesso para consulta de um banco de dados:
+>
+> - Se vários clientes de um banco solicitam o saldo, o atendimento deve atender ao primeiro a pedir.
+
+Portanto, fica claro que devemos criar listas nas quais possamos garantir algum tipo de ordenação. Este tipo de lista é conhecido como ***lista linear***.
+
+> **DEFINIÇÃO**: Uma lista linear é uma estrutura de dados que, além de armazenas vários valores de elementos, impõe que a posição de cada elemento deve respeitar algum tipo de ordem.
+
+Usando o formalistmo adequado para o estudo de lista linear, define-se que é uma estrutura dinâmica caracterizada por uma sequência ordenada de elementos, ordenada no sentido de sua posição relativa: E0, E1, E2, ..., En-1, tal que:
+
+- Existem *n* elementos na sequência
+- E0 é o primeiro elemento da sequência
+- En-1 é o último elemento da sequência
+- Para todo i e j entre 0 e n-1, se i < j, então Ei antecede Ej
+- Caso i = j-1, Ei é antecessor de Ej e Ej é sucessor de Ei
+
+A característica principal de uma lista linear é o sentido da ordem unidirecional dos elementos que a compõem. O critério usado para essa ordenação é bem genérico, podendo ser definido em função do problema que está sendo modelado.
+
+Dentre as diversas operações que podem ser realizadas com listas, temos:
+
+- Ter acesso a um elemento qualquer da lista (acesso).
+- Inserir um elemento em uma posição específica da lista (inserção).
+- Remover um elemento de uma posição específica da lista (remoção).
+- Combinar duas listas em apenas uma.
+- Particionar (dividir) uma lista em duas listas.
+- Determinar o total de elementos da lista etc.
 
 <details close>
     <summary><code>VÍDEO | Construindo Lista Linear Encadeada</code></summary>
 
+#### Definição de NÓ em Java
+
+Uma classe com 2 atributos
+
+- Campo do tipo de dado
+- Campo do tipo NÓ
+
+```java
+// declaração do no e dos atributos
+private static class NO {
+    public int dado;
+    public NO prox;
+}
+```
+
+#### Iniciando na lista vazia e depois inserindo um elemento
+
+```java
+public static void main(String[] args) {
+    NO lista = null; // Lista vazia
+}
+```
+
+> NULL é um valor especial que indica que a variável não está apontando para nenhum objeto.
+
+```java
+for(int i = 1; i <= 2; i++) {
+    NO novo = new NO(); // Cria um novo nó
+    novo.dado = i + 4; // Atribui o valor ao nó
+    novo.prox = lista; // O próximo nó é o que já existe na lista
+    lista = novo; // A lista agora é o novo nó
+}
+```
 
 </details>
 
