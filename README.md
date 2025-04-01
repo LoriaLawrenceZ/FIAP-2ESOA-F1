@@ -202,9 +202,41 @@ for(int i = 1; i <= 2; i++) {
 
 ## Lista Linear Especial: *PILHA*
 
+Uma pilha (***stack***) é uma lsita linear qual as operações de inserção e de remoção são efetuadas apenas em uma extremidade, denominada topo da pilha. Estruyturas deste tipo são conhecidas como ***LIFO*** (*Last In First Out*).
+
+> Pilhas são usadas em aplicações em que é necessário que a ordem de saída dos elementos seja inversa à ordem de entrada. Por exemplo, em um editor de texto, quando o usuário clica no botão "desfazer", o último caractere digitado é retirado do texto.
+
+![Estrutura de uma lista linear do tipo PILHA](img/img2.png)
+
+<details close>
+    <summary><code>IMAGEM | Estrutura de uma lista linear do tipo PILHA</code></summary>
+
+| | |
+| :---: | :---: |
+| Elemento n-1 | topo da Pilha |
+| ... | |
+| Elemento 2 | |
+| Elemento 1 | |
+| Elemento 0 | base da Pilha |
+
+</details>
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Lista Linear Especial: *FILA*
+
+Uma fila (***queue***) é uma lista linear na qual a operação de inserção é feita em uma extremidade denominada final da fila e a remoção é efetuada apenas na outra extremidade denomidade início. Estruturas deste tipo são conhecidas como ***FIFO*** (*First In First Out*)
+
+![Estrutura de uma lista linear do tipo FILA](img/img3.png)
+
+<details close>
+    <summary><code>IMAGEM | Estrutura de uma lista linear do tipo FILA</code></summary>
+
+| Início da fila| | | | Final da Fila |
+| :---: | :---: | :---: | :---: | :---: |
+| Elemento 0 | Elemento 1 | Elemento 2 | ... | Elemento n-1 |
+
+</details>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
