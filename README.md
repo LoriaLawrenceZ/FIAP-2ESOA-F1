@@ -786,15 +786,197 @@ Supondo a pilha que foi gerada na explicação da operação PUSH (que terminou 
 
 3. Com a liberação da área do nó com dado 3, a configuração final da pilha é que topo aponta para NULO
 
-![alt text](image.png)
+![Esquema de retirada do nó que está no topo com a operação POP() pilha encadeada](img/img21.png)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Implementação em Java da Pilha de Inteiros
 
+```java
+import java.util.*;
+
+public class Pilha_INT {
+
+    //definição do NO
+    private static class NO{
+        public  int dado;
+        public  NO prox;
+    }
+
+    //definição do retornos dos métodos POP e TOP
+    private static class Retorno{
+        public  int item;
+        public  boolean ok;
+    }
+    //definição do ponteiro topo da pilha	
+    private static NO topo;
+
+    public void INIT() {
+        topo = null;
+    }
+
+    public boolean IsEmpty() {
+        return topo == null;
+    }
+
+    public void PUSH(int item) {
+        NO novo = new NO();
+        novo.dado = item;
+        novo.prox = topo;
+        topo = novo;
+    }
+
+    public Retorno POP() {
+        Retorno saida = new Retorno();
+        
+        if(!IsEmpty()) {
+            saida.item = topo.dado;
+            topo = topo.prox;
+            saida.ok = true;
+        } else {
+            saida.ok = false;
+        }
+
+        return saida;
+    }
+
+    public Retorno TOP() {
+        Retorno saida = new Retorno();
+
+        if(!IsEmpty()) {
+            saida.item = topo.dado;
+            saida.ok = true;
+        } else {
+            saida.ok = false;
+        }
+
+        return saida;
+    }
+
+    //Função main que exemplifica a utilização das operações sobre pilha
+    public static void main(String[] args) {
+            
+        Pilha_INT s = new Pilha_INT();
+        Scanner entrada = new Scanner(System.in);
+
+        //Declaração de variáveis necessárias para usar métodos da Pilha_INT
+        int item ;
+        int opcao;
+        Retorno res = new Retorno();
+
+        //inicia a pilha fazendo topo = null
+        s.INIT();	
+        
+        //invoca metodo TOP para obter dado do nó do topo da pilha
+        res = s.TOP();
+        if (res.ok) {
+            System.out.println("Execução do TOP: "+  res.item);
+
+        } else {
+            System.out.println("Execução do TOP: pilha VAZIA");
+        }
+
+        //repetição para inserir elementos na pilha
+        do { 
+            System.out.println("Digite valor inteiro para dado  ");
+            
+            item= entrada.nextInt();
+            
+            s.PUSH(item);
+            
+            System.out.println("Digite 0 para encerrar empilhamento de dados  ");
+            
+            opcao=entrada.nextInt();
+        } while (opcao != 0);
+        
+        //invoca metodo TOP para obter dado do nó do topo da pilha		
+        res = s.TOP();
+
+        if (res.ok) {
+            System.out.println("Execução do TOP: " + res.item);
+        }
+            
+        //repetição para retirar e apresentar todos elementos da pilha	
+        do {
+            res = s.POP();
+        
+            if (res.ok) {
+                System.out.println("Dado retirado: " + res.item);	
+            }
+        } while (res.ok);
+
+        entrada.close();
+    }
+}
+```
+
+Na main() é possível notar que foi necessário declarar algumas variáveis que são necessárias para utilização dos métodos. A única que merece comentário é a *res*, como os métodos TOP() e POP() podem ser invocados quando a pilha está vazia e se isso acontecer não há dado para ser retornado, torna-se preciso que, não apenas o valor do dado retorne, mas também se a operação foi um sucesso ou não. Assim, se  a pilha não está vazia, o dado pode ser retornado e está tudo ok (*true* - é verdade que a operção foi um sucesso). Portanto, o tipo de retorno dos métodos TOP() e POP() foi alterado para o tipo Retorno, pois assim o dado e a situação OK ou não são retornados juntos.
+
+A pilha incia sendo colocada no estado "vazia" usando o método **INIT()**.
+
+Logo após, foi feita a invocação do método **TOP(res)** e como a pilha está vazia é retornado o valor de OK é false, uma vez que não há nó inserido na pilha.
+
+No programa os dados são inseridos na pilha fazendo uso de uma repetição que lê do teclado o valor da variável item e depois invoca o método **PUSH(item)** para inserir novo nó tendo o valor de item como campo dado.
+
+![Esquema de loop para inserção do dado pelo PUSH(I) na pilha encadeada](img/img22.png)
+
+Continuando a execução do programa, mais uma vez é feita a invocação do método **TOP(res)**, só que desta vez a pilha não está vazia. Desta forma, o atributo ok de *res* recebe o valor *true* e assim o valor do dado que está no topo da pilha é apresentado na tela de saída (*res.item*).
+
+Finalmente, o programa termina com a retirada de todos os nós da pilha e apresentação dos dados contidos em cada nó. Para realizar essa etapa, mais uma vez foi utilizado res que recebe do método **POP(res)** os valores para os atributos ok (*true* no caso da pilha não vazia e nó removido e *false* caso contrário) e item que terá apenas valor válido (valor do dado que está no topo da pilha) no caso de ok = true.. Sendo assim, a repetição fará com que POP seja executado até o momento em que a pilha estiver vazia.
+
+![Esquema do loop para remoção de elemento pelo POP() na pilha encadeada](image.png)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Exemplo de Uso do Tipo de Dado Pilha
+
+Suponha o seguinte problema: a conversão de um número representado em decimal em binário. Apenas para recordar como essa conversão é feita, suponha o valor 9 em decimal:
+
+> 13/2 = 6 resto 1
+> 6/2 = 3 resto 0
+> 3/2 = 1 resto 1
+> 1/2 = 0 resto 1
+
+O valor na base 2 é obtido escrevendo o resto na ordem inversa em que foram obtidos, assim, o valor 9 em decimal é 1001 em binário. (1x2³ + 0x2² + 0x2¹ + 1x2⁰ = 8 + 0 + 0 + 1 = 9).
+
+Para resolver o probelam, basta lembrar do funcionamento da pilha, que inverte a ordem em que os elementos foram inseridos. Desta forma, cada resto obtido é inserido na pilha e, quando a divisão obter resultado da parte inteira 0, basta desempilhar todos os elementos da pilha.
+
+```java
+public static void main(String[] args) {
+  
+    Pilha_INT s = new Pilha_INT();
+    Retorno res = new Retorno();
+    Scanner entrada = new Scanner(System.in);
+    int resto, num;
+
+    //inicia a pilha fazendo topo = null
+    s.INIT();	
+
+    System.out.print("Digite valor número na base 10: ");
+    num = entrada.nextInt();
+
+    // fazendo divisões sucessivas e empilhando os valores do
+    // resto até que num seja zero	
+    while (num > 0) {
+        resto = num % 2;
+        s.PUSH(resto);
+        num = num/2;
+    }
+
+    /* escrevendo o resto na ordem inversa que foram obtidos           
+    usando a propriedade LIFO da pilha*/
+    System.out.println("Numero em binario: ");
+    
+    do {
+        res = s.POP();
+        if (res.ok) {
+            System.out.print(" "+ res.item);	
+        }
+    } while (res.ok);
+    
+    entrada.close();
+}
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
