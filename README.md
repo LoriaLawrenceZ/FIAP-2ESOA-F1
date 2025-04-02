@@ -685,6 +685,109 @@ Para essa aplicação, teríamos que usar uma pilha, uma vez que o caminho de vo
 
 ## Implementando o Tipo de Dado Pilha
 
+Para construir o tipo de dado PILHA ENCADEADA deve-se definir o nó, que armazena a informação a ser organizada como pilha e que agora precisa ter incluída a indicação do próximo elemento da pilha.
+
+Representando em TAD:
+
+```pt-br
+Registro NO
+    Inicio
+	    dado: do tipo_dos_elementos
+	    prox: ponteiro para registro NO
+    Fim
+```
+
+Para implementar uma pilha, não apenas é definido o nó que armazena cada elemento, mas também indicar a extremidade que representa o topo da pilha
+
+```java
+public class Pilha_INT {
+  
+	private static class NO{
+	    public  int dado;
+	    public  NO prox;
+	}
+	
+	private static NO topo;
+    ...
+```
+
+### Operações com Pilha
+
+<details close>
+    <summary><code>Operações | INIT</code></summary>
+
+#### INIT
+
+Lembrando que a pilha deve estar vazia no momento de sua criação. A função **INIT** deve deixar a indicação que o topo da pilha não aponta para um nó. EM linguagem algorítimica, será definida uma constante denominada NULO que indica que o topo está apontando para nenhum nó.
+
+![Algoritmo da operação INIT para pilha encadeada](img/img14.png)
+
+![Estado da pilha executando a operação INIT](img/img15.png)
+
+</details>
+
+<details close>
+    <summary><code>Operações | ISEMPTY</code></summary>
+
+#### ISEMPTY
+
+Verifica se a pilha está vazia. Retornando verdade se estiver vazia, caso contrário retorna faldo.
+
+![Algoritmo da operação IsEmpty pilha encadeada](img/img16.png)
+
+</details>
+
+<details close>
+    <summary><code>Operações | PUSH</code></summary>
+
+#### PUSH
+
+Esta operação deve primeiro alocar mais um nó e em seguida "encaixar" esse novo nó como o nó que fica no topo da pilha
+
+![Algoritmo da operação PUSH pilha encadeada](img/img17.png)
+
+![Esquema de alocação de novo nó na operação PUSH pilha encadeada](img/img18.png)
+
+1. Supondo que a pilha está vazia, depois do ALOCA(), o nó está alocado e é apontado por novo:
+
+- 2. Como o novo nó passa a ser o topo da pilha, este novo nó deve indicar quie seu sucessor é o local que era o topo da pilha antes da inserção do novo nó (apontado por novo). Assim, o campo prox passa a apontar para o mesmo local que o ponteiro topo aponta, como a pilha estava vazia, o campo prox recebe NULO. Em seguida, o campo dado do novo nó recebe o valor 3 passado como parâmetro para o módulo push.
+
+- 3. Posicionando o topo para apontar a pilha em sua nova configuração, lembre-se que na pilha o topo deve apontar para o último elemento que foi inserido.
+
+</details>
+
+<details close>
+    <summary><code>Operações | TOP</code></summary>
+
+#### TOP
+
+Esta operação retorna o valor do dado do nó que está no topo da pilha caso a pilha não estiver vazia.
+
+![Algoritmo da operação TOP pilha encadeada](img/img19.png)
+
+</details>
+
+<details close>
+    <summary><code>Operações | POP</code></summary>
+
+#### POP
+
+Esta operação deve considerar que só poderá retirar um nó se a pilha não estiver vazia. No algoritmo a seguir, o módulo POP verifica se a pilha não está vazia utilizando a operação IsEmpty() que retorna verdade se a pilha estiver vazia.
+
+![Algoritmo da operação POP pilha encadeada](img/img20.png)
+
+</details>
+
+Supondo a pilha que foi gerada na explicação da operação PUSH (que terminou com apenas um elemento com dado 3) e, em seguida, executando a operação POP (topo, elm) para exemplificar:
+
+1. Inicialmente a pilha está com apenas 1 nó e otopo aponta para este
+
+2. Com a atribuição elem = topo.dado o valor 3 é atribuído parâmetro elem e, em seguida, topo = topo.prox fazendo com que o ponteiro topo passe a apontar para o mesmo local onde o campo prox aponta, ou seja, NULO
+
+3. Com a liberação da área do nó com dado 3, a configuração final da pilha é que topo aponta para NULO
+
+![alt text](image.png)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Implementação em Java da Pilha de Inteiros
