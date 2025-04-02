@@ -924,7 +924,7 @@ Continuando a execução do programa, mais uma vez é feita a invocação do mé
 
 Finalmente, o programa termina com a retirada de todos os nós da pilha e apresentação dos dados contidos em cada nó. Para realizar essa etapa, mais uma vez foi utilizado res que recebe do método **POP(res)** os valores para os atributos ok (*true* no caso da pilha não vazia e nó removido e *false* caso contrário) e item que terá apenas valor válido (valor do dado que está no topo da pilha) no caso de ok = true.. Sendo assim, a repetição fará com que POP seja executado até o momento em que a pilha estiver vazia.
 
-![Esquema do loop para remoção de elemento pelo POP() na pilha encadeada](image.png)
+![Esquema do loop para remoção de elemento pelo POP() na pilha encadeada](img/img23.png)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -973,7 +973,7 @@ public static void main(String[] args) {
             System.out.print(" "+ res.item);	
         }
     } while (res.ok);
-    
+
     entrada.close();
 }
 ```
@@ -982,17 +982,358 @@ public static void main(String[] args) {
 
 # LISTAS LINEARES ESPECIAIS: FILAS ENCADEADAS
 
+A declaração do nó é exatamente a mesma da pilha e da lista já estudades, ou seja, cada nó é composto de 2 campos: dado (do tipo da informação que deseja armazenas na fila) e o ponteiro para próximo nó.
+
+![Exemplo de um esquema de Fila Encadeada](img/img24.png)
+
+<details close>
+    <summary><code>IMAGEM | Exemplo de um esquema de Fila Encadeada</code></summary>
+
+```mermaid	
+---
+title:
+---
+classDiagram
+direction LR
+    class Elemento1 {
+        v1
+        Ponteiro para Elemento2()
+    }
+    class Elemento2 {
+        Elemento2
+        Ponteiro para null()
+    }
+
+    Elemento1 --> Elemento2
+    Elemento2 --> NULL
+
+    ini ()-- Elemento1
+    fim ()-- Elemento2
+```
+
+</details>
+
+Note que para manter as extremidades de início e final da fila, é preciso agora ter 2 ponteiros auxiliares: **ini** (início da fila) e **fim** (final da fila). Assim é possível inferir que o nó com dado v1 foi o primeiro elemento que entrou na fila, uma vez que o ponteiro ini aponta para ele. Além disso, podemos ver que pelo ponteiro prox do nó com dado v1 que o nó com dado v2 foi o segundo inserido. Como a fila tem apenas 2 elementos, o nó com dado v2 é também o último elemento a entrar na fila, por isso o ponteiro final está apontado para esse nó.
+
+É possível concluir que uma fila precisa dos seguintes componentes:
+
+- O armazenamento de elementos
+- Ponteiro para início da fila (ini)
+- Ponteiro para final da fila (fim)
+
+Defininfo com TAD esses componentes, temos:
+
+```pt-br
+Registro NO
+    Inicio
+        dado: do tipo_dos_elementos
+        prox: ponteiro para registro NO
+    Fim
+ini,fim: ponteiro para registro NO
+```
+
+Especificações de tipo de dado FILA:
+
+- Os valores que poderão ser armazenados na fila depende do tipo de dado que a aplicação precisa armazenar.
+- As operações necessárias para manipulação da fila são:
+    - **ENQUEUE** (fila, v): inserir um elemento em apenas uma extremidade da fila, conhecida como final da fila
+    - **DEQUEUE** (fila, v): remove um elemento da fila em apenas uma extremidade da fila, conhecida como início da fila
+    - **FIRST** (fila, v): lê o elemento que está no início da fila e armazena em v
+    - **INIT** (fila): inicia a fila, deixando-a vazia
+    - **ISEMPTY** (fila): verifica se a fila está vazia, retornando verdade se a fila estiver vazia e falso, caso contrário
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Implementando o Tipo de Dado Fila
+
+<details close>
+    <summary><code>Operações | INIT</code></summary>
+
+#### INIT
+
+Lembrando que a fila deve estar vazia no momento de sua criação. A função INIT deve deixar a indicação que os ponteiros de início e fim da fila não apontam para um nó. Para tanto, em linguagem algorítmica, os dois ponteiros devem receber (apontar) para NULO
+
+Assim, iniciar uma fila deixando-a na condição de fila vazia implica em fazer ini = fim = NULO.
+
+![Algoritmo da operação INIT para Fila Encadeada](img/img25.png)
+
+![Estado da fila executando a operação INIT](img/img26.png)
+
+</details>
+
+<details close>
+    <summary><code>Operações | ISEMPTY</code></summary>
+
+#### ISEMPTY
+
+Verifica se a fila está vazia. Retornando verdade se estiver vazia, caso contrário, retorna falso.
+
+Observe que a fila é considerada vazia se estiver no estado em que é iniciada pela função INIT
+
+![Algoritmo da operação ISEMPTY para Fila Encadeada](img/img27.png)
+
+</details>
+
+<details close>
+    <summary><code>Operações | ENQUEUE (Insere na fila)</code></summary>
+
+#### ENQUEUE
+
+Esta operação deve iniciar alocando um novo nó para ser inserido na fila, depois armazena um valor no campo dado do novo nó e, finalmente, "encaixar" o novo nó na posição correta e alterar ponteiros necessários. Para o "encaixe", deve-se primeiro entender que quando inserido um elemento na fila, esse sempre se torna o último, sendo assim, não tem elemento que o sucede e, portanto, o ponteiro prox desse nó deve apontar NULO.
+
+Existe duas situações distintas que devem ser analisadas para a inserção de um novo elemento:
+
+- Se a fila estiver vazia, ambos os ponteiros de início e final da fila devem apontar para o mesmo nó.
+- Caso contrário, apenas deve-se movimentar o ponteiro que aponta para o nó que está no final da fila.
+
+![Algoritmo da operação ENQUEUE para Fila Encadeada](img/img28.png)
+
+![Esquema de alocação de novo nó na operação ENQUEUE fila encadeada](img/img29.png)
+
+A descrição do passo a passo da inserção do novo nó:
+
+1. A indicação de que a fila está vazia ocorre pelo estado em que se encontram os ponteiros ini e fim. Depois de alocar o nó este é apontado por novo.
+2. O campo dado recebe 8 e o campo prox do novo nó alocado recebe o ponteiro NULO (uma vez quye sempre o nó inserido será o último da fila, ou seja, sem sucessor).
+3. Posiciona o ponteiro ini (uma vez que a fila está vazia) e o ponteiro fim para apontar o novo nó alocado.
+
+Para entender bem todas as etapas realizadas na inserção de um novo nó, vamos supor que a operação ENQUEUE(ini, fim, 5) seja executada em seguida.
+
+![Esquema de alocação de novo nó na operação ENQUEUE fila encadeada](img/img30.png)
+
+a. Iniciando com a alocação de um novo nó e a fila com estado deixado pelo ENQUEUE anterior
+b. No novo nó campo dado recebe 5 e prox recebe NULO. Verificando que a fila não está mais vazia, o nó que estava no final da fila passa ter seu campo prox apontando para o mesmo local que o ponteiro novo aponta (ou seja, para o novo nó alocado), e depois fim passa apontar para o novo nó.
+
+</details>
+
+<details close>
+    <summary><code>Operações | DEQUEUE (Retira elemento da fila)</code></summary>
+
+#### DEQUEUE
+
+Esta operação retira um elemento do início da fila se esta não estiver vazia. Para tanto, outras condições devem ser verificadas.
+
+- Verificar se a fila está vazia e se não estiver:
+
+Se a fila for composta por apenas 1 elemento: os ponteiros ini e fim devem ser alterados para NULO quando o elemento for retirado.
+
+Caso tenha mais do que 1 elemento: o ponteiro ini é o único a ser alterado e deve apontar para o nó que se torna o primeiro da fila, ou seja, o nó sucessor do que está sendo retirado.
+
+![Algoritmo da operação DEQUEUE para Fila Encadeada](img/img31.png)
+
+![Esquema da operação DEQUEUE para FIla Encadeada](img/img32.png)
+
+</details>
+
+<details close>
+    <summary><code>Operações | FIRST</code></summary>
+
+#### FIRST
+
+Essa operação lê o valor do dado do elemento que está no início da fila e retorna pelo parâmetro v. Essa função é equivalente da função TOP de uma pilha, ou seja, apenas retorna o valor do dado do elemento que está no início da fila sem alterar a fila.
+
+</details>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Implementação de Fila em Java
 
+```java
+public class Fila_INT {
+  
+    //definição nó da FILA	
+	private static class NO{
+	    public  int dado;
+	    public  NO prox;
+	}
+  
+    //definição dos ponteiros ini e fim	
+	private static NO ini;
+	private static NO fim;
+	
+	private static class Retorno{
+	    public  int item;
+	    public  boolean ok;
+	}
+	
+	public void INIT() {
+	    ini = null;
+	    fim = null;
+	}
+	
+	
+	public boolean IsEmpty() {
+	    return (ini == null && fim == null);
+	}
+	
+	public void ENQUEUE(int item) {
+        NO novo = new NO();
+        novo.dado = item;
+        novo.prox = null;
+        if (IsEmpty()) {
+            ini = novo;
+        } else {
+            fim.prox = novo;
+        }
+        fim = novo;
+	}
+  
+  
+	public Retorno DEQUEUE() {
+        Retorno saida = new Retorno();
+        if (!IsEmpty()) {
+            saida.item = ini.dado;
+            ini = ini.prox;
+            if (ini == null) fim = null;
+            saida.ok = true;
+        } else {
+            saida.ok = false;
+        }
+        return saida;
+	}
+	
+	  
+	public static void main(String[] args) {
+  
+        //Instanciando o objeto fila
+	    Fila_INT fila = new Fila_INT();
+  
+        Retorno resultado = new Retorno();
+	    Scanner entrada = new Scanner(System.in);
+    	int item, opcao;
+  
+	    fila.INIT();
+  
+	    //repetição para inserir elementos na FILA
+	    do { 
+	    System.out.print("Digite dado inteiro: ");
+	    item= entrada.nextInt();
+	    fila.ENQUEUE(item);
+	    System.out.print("Digite 0 para encerrar inserção de dados  ");
+        opcao=entrada.nextInt();
+	    } while (opcao != 0);
+	
+	
+	    // repetira elemento da FILA até que esta fique vazia
+	    do {
+		    resultado = fila.DEQUEUE();
+		    if (resultado.ok) {
+		        System.out.println("Dado retirado: " + resultado.item);	
+		    } 
+        } while (resultado.ok);
+  
+    	entrada.close();	
+	}
+}
+```
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 # Exemplo de Uso do Fila
+
+A aplicação mais óbvia do tipo de dado fila é sua utilização em situações cotidianas.
+
+No exemplo, cada paciente para entrar na fila deve fornecer o seu nome. A fila terá como campo dado o nome (String) de cada poaciente que entra no consultório e que será atendido.
+
+```java
+import java.util.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Fila_Paciente {
+        
+    private static class NO{
+        public  String dado;
+        public  NO prox;
+    }
+        
+    private static NO ini;
+    private static NO fim;
+    
+    private static class RetornoP{
+        public  String item;
+        public  boolean ok;
+    }
+    
+    public void INIT() {
+        ini = null;
+        fim = null;
+    }
+        
+    public boolean IsEmpty() {
+        return (ini == null && fim == null);
+    }
+        
+    public void ENQUEUE(String item) {
+        NO novo = new NO();
+        novo.dado = item;
+        novo.prox = null;
+        if (IsEmpty())  
+        ini = novo;
+        else 
+        fim.prox = novo;
+        fim = novo;
+    }
+
+    public RetornoP DEQUEUE() {
+        RetornoP saida = new RetornoP();
+        if(!IsEmpty()) {
+            saida.item = ini.dado;
+            ini = ini.prox;
+            if (ini == null) fim = null;
+            saida.ok = true;
+        }
+        else
+            saida.ok = false;
+        return saida;
+    }
+        
+        
+    public static void main(String[] args) throws IOException {
+        
+        // Instacia a fila de pacientes
+        Fila_Paciente fila = new Fila_Paciente();
+        RetornoP resultado = new RetornoP();
+        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        Scanner entrada = new Scanner(System.in);
+        
+        int opcao;
+        
+        // Fila inicia vazia
+        fila.INIT();
+
+        // Menu para similar entrada e saída de pacientes em uma
+        // fila em um consultório médico
+        do { 
+        System.out.println("1 - Insere paciente na fila de espera  ");
+        System.out.println("2 - Chama cliente para atendimento  ");
+        System.out.println("3 - Sair - apenas se não houver mais cliente na fila ");
+        opcao=entrada.nextInt();
+        switch (opcao) {
+            case 1:	
+            System.out.println("Digite nome do paciente ");
+            String item= in.readLine();
+            fila.ENQUEUE(item);
+            break;
+            case 2: 
+            resultado = fila.DEQUEUE();
+            if (resultado.ok)
+                System.out.println("Cliente Chamado: "+ resultado.item);
+            break;
+            case 3: 
+            if (!fila.IsEmpty()) {
+                opcao = 4;
+                System.out.println("Não pode encerrar, pois há clientes na fila ");
+                }
+            break;
+            default:
+            System.out.println("Opção inválida ");
+            }
+        } while (opcao !=3);
+        entrada.close();	
+    }
+}
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
