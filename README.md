@@ -19,9 +19,14 @@
 - [DÉCADA DE 1980](#década-de-1980)
 - [CONCEITUANDO BANCO DE DADOS](#conceituando-banco-de-dados)
 - [DIFERENCIANDO DADO E INFORMAÇÃO](#diferenciando-dado-e-informação)
-    - [Qual a diferença entre Dado e Informação?](#qual-a-diferença-entre-dado-e-informação)
-    - [Dados, Informação e Conhecimento](#dados-informação-e-conhecimento)
-    - [Propriedades de um Banco de Dados](#propriedades-de-um-banco-de-dados)
+  - [Qual a diferença entre Dado e Informação?](#qual-a-diferença-entre-dado-e-informação)
+  - [Dados, Informação e Conhecimento](#dados-informação-e-conhecimento)
+  - [Propriedades de um Banco de Dados](#propriedades-de-um-banco-de-dados)
+  - [Conceituando Sistema Gerenciador de Banco de Dados](#conceituando-sistema-gerenciador-de-banco-de-dados)
+  - [Conceituando Sistemas de Banco de Dados](#conceituando-sistemas-de-banco-de-dados)
+- [VISUALIZANDO OS COMPONENTES DE UM *SISTEMA DE BANCO DE DADOS*](#visualizando-os-componentes-de-um-sistema-de-banco-de-dados)
+- [CARACTERIZANDO UM *SISTEMA DE BANCO DE DADOS*](#caracterizando-um-sistema-de-banco-de-dados)
+- [VANTAGENS DE UTILIZAR UM *SISTEMA DE BANCO DE DADOS*](#vantagens-de-utilizar-um-sistema-de-banco-de-dados)
 
 </details>
 
@@ -122,14 +127,64 @@ Um banco de dados pode ajudar:
 
 ## Propriedades de um Banco de Dados
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+Banco de dados possui propriedades, como por exemplo:
+
+- Coleção lógica e coerente de dados (dados dispostos de forma desordenada não podem ser referenciados como banco de dados).
+- É projetado, construído e populado com dados para um propósito específico.
+
+Modelo de dados relacional que corresponde ao projeto físico de um banco de dados:
+
+![Modelo de dados relacional - Projeto físico do banco de dados](img/img6.png)
+
+Ilustrando a ideia de que um banco de dados é contruído, pode-se representar o script DDL (conjunto de códigos, por meio da linguagem SQL) para implementação de um banco de dados:
+
+![Conjunto de comandos da linguagem SQL que permitem popular um banco de dados (1)](img/img7.png)
+
+Ilustrando a ideia de que um banco de dados é populado, pode-se representar o script DML (conjunto de códigos, por meio da linguagem SQL) para popular um banco de dados:
+
+![Conjunto de comandos da linguagem SQL que permitem popular um banco de dados (2)](img/img8.png)
+
+- Um banco de dados possui um conjunto ré-definido de usuários e aplicações.
+- Representa algum aspecto do mundo real, porção da relidade, o qual é chamado de "minimundo"; qualquer alteração efetuada no minimundo é automaticamente refletida no banco de dados.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+## Conceituando Sistema Gerenciador de Banco de Dados
+
+SGBD é um software ue facilita alguns processos associados aos bancos de dados.
+
+- ***Definir***: um banco de dados refere-se à especificação de tipos, estruturas e restrições associadas aos dados que serão armazenados.
+- ***Construção***: de um banco de dados refere-se ao processo de armazenas os dados em algum meio controlado pelo SGBD.
+- ***Manipulação***: de um banco de dados refere-se à inclusão de funções como consulta ao banco de dados para recuperação de dados específicos, atualização do banco de dados e geração e relatórios com base nos dados.
+- ***Compartilhamento***: de um banco de dados permite que diversos usuários e programas acessem-no simultaneamente.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## Conceituando Sistemas de Banco de Dados
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+# VISUALIZANDO OS COMPONENTES DE UM *SISTEMA DE BANCO DE DADOS*
+
+![Os componentes de um sistema de banco de dados](img/img9.png)
+
+O Sistema Gerenciados de Banco de Dados permite que um banco de dados tenha a característica MULTIUSUÁRIO, ou seja, vários usuários podem acessar o banco de dados ao mesmo tempo.
+
+De modo geral, os dados de um banco estarão integrados e compartilhados.
+
+- **Independência dos dados**: por meio do sistema de banco de dados, o SGBD (software de controle e gerenciamento) fica posicionado entre o banco de dados e as aplicações, atendendo às solicitações das aplicações.
+- **Integrado**: unificação de vários arquivos, eliminação de redundância. (exemplo: dados do aluno e boletim do aluno)
+- **Compartilhado**: vários usuários podem acessar o banco de dados ao mesmo tempo (exemplo: consulta da ficha cadastral)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+# CARACTERIZANDO UM *SISTEMA DE BANCO DE DADOS*
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+# VANTAGENS DE UTILIZAR UM *SISTEMA DE BANCO DE DADOS*
+
+- **Os dados podem ser compartilhados**: várias aplicações podem acessar os mesmos dados de um banco de dados.
+- **A redundância pode ser reduzida**: cada aplicação tem seus próprios arquivos, ou seja, os mesmos dados são armazenados várias vezes. Quando a redundância ocorre, temos alguns problemas como: despedício de espaço em disco em função da repetição de informação em vários lugares, dificuldade para atualização das informações repetidas em lugares diferentes e a inconsistência, em função da falha durante a atualização das informações repetidas.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
